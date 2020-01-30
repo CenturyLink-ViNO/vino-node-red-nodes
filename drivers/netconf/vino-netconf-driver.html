@@ -1,0 +1,110 @@
+<!--
+  Copyright JS Foundation and other contributors, http://js.foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type='text/javascript' src='/nodes/lib/ui/NodeConfig.js'/>
+
+<script type='text/x-red' data-template-name='vino-driver-netconf'>
+    <br/>
+    <div class='form-row'>
+        <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+        <input type='text' id='node-input-name' placeholder='Name'>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <label for='node-input-description'><i class='fa fa-tags'></i> Description</label>
+        <textarea id='node-input-description' placeholder=''></textarea>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <label for='baseType-select' id='baseType-select-label'><i class='fa fa-tag'></i> Netconf Action</label>
+        <select id='baseType-select'>
+        </select>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <button type="button" id='statusOptions-button'>Status Message Options</button>
+    </div>
+
+    <div class='form-row loading-div' style='display: block;'>
+        <label>Loading....</label>
+    </div>
+
+    <div class='form-row' style='display: none;'>
+        <label for='node-input-lastModified'><i class='fa fa-tags'></i> Last Modified</label>
+        <input type='text' id='node-input-lastModified'>
+    </div>
+
+    <div id='baseTypes'>
+    </div>
+</script>
+
+<!-- Help text for the node can be provided here                             -->
+<script type='text/x-red' data-help-name='vino-driver-netconf'>
+   <p>ViNO Driver node used to perform Netconf operations.</p>
+   <p>Uses Handlebars templating for Netconf operations.</p>
+   <p></p>
+   <p>Handlebars documentation: https://handlebarsjs.com/</p>
+</script>
+
+<script type='text/javascript'>
+    RED.nodes.registerType('vino-driver-netconf',
+    {
+        category: 'ViNO',
+        defaults:
+        {
+            name: {value:'Netconf'},
+            description: {value:''},
+            baseTypes: {value:[]},
+            selectedBaseType: {value:''},
+            statusConfiguration: {value:{}},
+            lastModified: {value:''},
+            isDeactivationNode: {value: false}
+        },
+        inputs:1,
+        outputs:1,
+        icon: 'myicon.png',
+        label: function()
+        {
+            return this.name||this.url||'vino-driver-netconf';
+        },
+        labelStyle: function()
+        {
+            return this.name?'node_label_italic':'';
+        },
+        color: '#F3B567',
+        oneditprepare: function()
+        {
+            node = this;
+            jQuery(".editor-tray").width(900);
+            ctl.ui.renderUI(node, RED.settings.vinoDriverNetconfCommands, RED.settings.vinoDriverNetconfCommonParameters);
+        },
+        oneditsave: function()
+        {
+            node = this;
+            jQuery('#node-input-lastModified').val(Date.now());
+            ctl.ui.save(node);
+            ctl.ui.close(node);
+        },
+        oneditcancel: function()
+        {
+           node = this;
+           ctl.ui.close(node);
+        }
+    });
+</script>

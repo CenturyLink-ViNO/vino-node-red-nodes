@@ -1,0 +1,1828 @@
+├─ JSONSelect@0.4.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/lloyd/JSONSelect
+│  ├─ publisher: Lloyd Hilaiel
+│  ├─ email: lloyd@hilaiel.com
+│  ├─ url: http://lloyd.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/JSONSelect
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/JSONSelect/LICENSE
+├─ abbrev@1.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/abbrev-js
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/abbrev
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/abbrev/LICENSE
+├─ ajv@6.6.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/ajv
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ajv
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ajv/LICENSE
+├─ ansi-regex@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/ansi-regex
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ansi-regex
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ansi-regex/license
+├─ aproba@1.2.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/iarna/aproba
+│  ├─ publisher: Rebecca Turner
+│  ├─ email: me@re-becca.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/aproba
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/aproba/LICENSE
+├─ are-we-there-yet@1.1.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/iarna/are-we-there-yet
+│  ├─ publisher: Rebecca Turner
+│  ├─ url: http://re-becca.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/are-we-there-yet
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/are-we-there-yet/LICENSE
+├─ ascli@0.3.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/ascli
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ascli
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ascli/LICENSE
+├─ ascli@1.0.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/ascli
+│  ├─ publisher: Daniel Wirtz
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ascli
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ascli/LICENSE
+├─ asn1@0.2.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/joyent/node-asn1
+│  ├─ publisher: Joyent
+│  ├─ url: joyent.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/asn1
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/asn1/LICENSE
+├─ assert-plus@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mcavage/node-assert-plus
+│  ├─ publisher: Mark Cavage
+│  ├─ email: mcavage@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/assert-plus
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/assert-plus/README.md
+├─ async@2.6.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/caolan/async
+│  ├─ publisher: Caolan McMahon
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/async
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/async/LICENSE
+├─ asynckit@0.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/alexindigo/asynckit
+│  ├─ publisher: Alex Indigo
+│  ├─ email: iam@alexindigo.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/asynckit
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/asynckit/LICENSE
+├─ aws-sdk@2.377.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/aws/aws-sdk-js
+│  ├─ publisher: Amazon Web Services
+│  ├─ url: https://aws.amazon.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sdk
+│  ├─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sdk/LICENSE.txt
+│  └─ noticeFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sdk/NOTICE.txt
+├─ aws-sign2@0.7.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/mikeal/aws-sign
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ url: http://www.futurealoof.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sign2
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sign2/LICENSE
+├─ aws4@1.8.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mhart/aws4
+│  ├─ publisher: Michael Hart
+│  ├─ email: michael.hart.au@gmail.com
+│  ├─ url: http://github.com/mhart
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws4
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws4/LICENSE
+├─ balanced-match@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/balanced-match
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/balanced-match
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/balanced-match/LICENSE.md
+├─ base64-js@1.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/beatgammit/base64-js
+│  ├─ publisher: T. Jameson Little
+│  ├─ email: t.jameson.little@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/base64-js
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/base64-js/LICENSE
+├─ base64url@0.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/brianloveswords/base64url
+│  ├─ publisher: Brian J Brennan
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jwa/node_modules/base64url
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jwa/node_modules/base64url/LICENSE
+├─ base64url@1.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/brianloveswords/base64url
+│  ├─ publisher: Brian J Brennan
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/base64url
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/base64url/LICENSE
+├─ bcrypt-pbkdf@1.0.2
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/joyent/node-bcrypt-pbkdf
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/bcrypt-pbkdf
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/bcrypt-pbkdf/LICENSE
+├─ brace-expansion@1.1.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/brace-expansion
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/brace-expansion
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/brace-expansion/LICENSE
+├─ buffer-equal-constant-time@1.0.1
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/goinstant/buffer-equal-constant-time
+│  ├─ publisher: GoInstant Inc., a salesforce.com company
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/buffer-equal-constant-time
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/buffer-equal-constant-time/LICENSE.txt
+├─ buffer@4.9.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/feross/buffer
+│  ├─ publisher: Feross Aboukhadijeh
+│  ├─ email: feross@feross.org
+│  ├─ url: http://feross.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/buffer
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/buffer/LICENSE
+├─ bufferview@1.0.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/node-BufferView
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/bufferview
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/bufferview/LICENSE
+├─ bytebuffer@3.5.5
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/ByteBuffer.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/bytebuffer
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/bytebuffer/LICENSE
+├─ bytebuffer@5.0.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/bytebuffer.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/bytebuffer
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/bytebuffer/LICENSE
+├─ camelcase-keys@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/camelcase-keys
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/camelcase-keys
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/camelcase-keys/readme.md
+├─ camelcase@1.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/camelcase
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/camelcase
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/camelcase/license
+├─ camelcase@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/camelcase
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/yargs/node_modules/camelcase
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/yargs/node_modules/camelcase/license
+├─ caseless@0.12.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/mikeal/caseless
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/caseless
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/caseless/LICENSE
+├─ chownr@1.1.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/chownr
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/chownr
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/chownr/LICENSE
+├─ cjson@0.2.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kof/node-cjson
+│  ├─ publisher: Oleg Slobodskoi
+│  ├─ email: oleg008@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/cjson
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/cjson/readme.md
+├─ cliui@3.2.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/yargs/cliui
+│  ├─ publisher: Ben Coe
+│  ├─ email: ben@npmjs.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/cliui
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/cliui/LICENSE.txt
+├─ code-point-at@1.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/code-point-at
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/code-point-at
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/code-point-at/license
+├─ colors@0.5.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Marak/colors.js
+│  ├─ publisher: Marak Squires
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/colors
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/colors/ReadMe.md
+├─ colour@0.7.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dcodeIO/colour.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/colour
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/colour/LICENSE
+├─ combined-stream@1.0.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/felixge/node-combined-stream
+│  ├─ publisher: Felix Geisendörfer
+│  ├─ email: felix@debuggable.com
+│  ├─ url: http://debuggable.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/combined-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/combined-stream/License
+├─ commander@0.6.1
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/visionmedia/commander.js
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jade/node_modules/commander
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jade/node_modules/commander/Readme.md
+├─ commander@2.17.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tj/commander.js
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/commander
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/commander/LICENSE
+├─ commander@2.3.0
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/visionmedia/commander.js
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mocha/node_modules/commander
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mocha/node_modules/commander/Readme.md
+├─ concat-map@0.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/node-concat-map
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/concat-map
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/concat-map/LICENSE
+├─ concat-stream@1.4.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/maxogden/concat-stream
+│  ├─ publisher: Max Ogden
+│  ├─ email: max@maxogden.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/concat-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/concat-stream/LICENSE
+├─ console-control-strings@1.1.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/iarna/console-control-strings
+│  ├─ publisher: Rebecca Turner
+│  ├─ email: me@re-becca.org
+│  ├─ url: http://re-becca.org/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/console-control-strings
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/console-control-strings/LICENSE
+├─ core-util-is@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/isaacs/core-util-is
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/core-util-is
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/core-util-is/LICENSE
+├─ dashdash@1.14.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/trentm/node-dashdash
+│  ├─ publisher: Trent Mick
+│  ├─ email: trentm@gmail.com
+│  ├─ url: http://trentm.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/dashdash
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/dashdash/LICENSE.txt
+├─ debug@2.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/visionmedia/debug
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/debug
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/debug/Readme.md
+├─ debug@2.6.9
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/visionmedia/debug
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/debug
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/debug/LICENSE
+├─ decamelize@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/decamelize
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/decamelize
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/decamelize/license
+├─ deep-extend@0.6.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/unclechu/node-deep-extend
+│  ├─ publisher: Viacheslav Lotsmanov
+│  ├─ email: lotsmanov89@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/deep-extend
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/deep-extend/LICENSE
+├─ deep-is@0.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/thlorenz/deep-is
+│  ├─ publisher: Thorsten Lorenz
+│  ├─ email: thlorenz@gmx.de
+│  ├─ url: http://thlorenz.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/deep-is
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/deep-is/LICENSE
+├─ delayed-stream@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/felixge/node-delayed-stream
+│  ├─ publisher: Felix Geisendörfer
+│  ├─ email: felix@debuggable.com
+│  ├─ url: http://debuggable.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/delayed-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/delayed-stream/License
+├─ delegates@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/visionmedia/node-delegates
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/delegates
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/delegates/License
+├─ detect-libc@1.0.3
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/lovell/detect-libc
+│  ├─ publisher: Lovell Fuller
+│  ├─ email: npm@lovell.info
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/detect-libc
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/detect-libc/LICENSE
+├─ diff@1.4.0
+│  ├─ licenses: BSD
+│  ├─ repository: https://github.com/kpdecker/jsdiff
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/diff
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/diff/README.md
+├─ duplexify@3.6.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mafintosh/duplexify
+│  ├─ publisher: Mathias Buus
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/duplexify
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/duplexify/LICENSE
+├─ ebnf-parser@0.1.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/zaach/ebnf-parser
+│  ├─ publisher: Zach Carter
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ebnf-parser
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ebnf-parser/README.md
+├─ ecc-jsbn@0.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/quartzjer/ecc-jsbn
+│  ├─ publisher: Jeremie Miller
+│  ├─ email: jeremie@jabber.org
+│  ├─ url: http://jeremie.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ecc-jsbn
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ecc-jsbn/LICENSE
+├─ ecdsa-sig-formatter@1.0.10
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/Brightspace/node-ecdsa-sig-formatter
+│  ├─ publisher: D2L Corporation
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ecdsa-sig-formatter
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ecdsa-sig-formatter/LICENSE
+├─ end-of-stream@1.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mafintosh/end-of-stream
+│  ├─ publisher: Mathias Buus
+│  ├─ email: mathiasbuus@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/end-of-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/end-of-stream/LICENSE
+├─ errs@0.3.2
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/indexzero/errs
+│  ├─ publisher: Charlie Robbins
+│  ├─ email: charlie.robbins@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/errs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/errs/LICENSE
+├─ escape-string-regexp@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/escape-string-regexp
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/escape-string-regexp
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/escape-string-regexp/readme.md
+├─ escodegen@0.0.21
+│  ├─ licenses: BSD
+│  ├─ repository: https://github.com/Constellation/escodegen
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/escodegen
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/escodegen/LICENSE.BSD
+├─ escodegen@1.11.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/escodegen
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/node_modules/escodegen
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/node_modules/escodegen/LICENSE.BSD
+├─ esprima@1.0.4
+│  ├─ licenses: BSD
+│  ├─ repository: https://github.com/ariya/esprima
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/escodegen/node_modules/esprima
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/escodegen/node_modules/esprima/README.md
+├─ esprima@1.2.2
+│  ├─ licenses: BSD
+│  ├─ repository: https://github.com/ariya/esprima
+│  ├─ publisher: Ariya Hidayat
+│  ├─ email: ariya.hidayat@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/esprima
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/esprima/README.md
+├─ esprima@3.1.3
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/jquery/esprima
+│  ├─ publisher: Ariya Hidayat
+│  ├─ email: ariya.hidayat@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/node_modules/esprima
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/node_modules/esprima/LICENSE.BSD
+├─ estraverse@0.0.4
+│  ├─ licenses: BSD
+│  ├─ repository: https://github.com/Constellation/estraverse
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/estraverse
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/estraverse/LICENSE.BSD
+├─ estraverse@4.2.0
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/estools/estraverse
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/node_modules/estraverse
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/node_modules/estraverse/LICENSE.BSD
+├─ esutils@2.0.2
+│  ├─ licenses: BSD
+│  ├─ repository: https://github.com/estools/esutils
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/esutils
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/esutils/LICENSE.BSD
+├─ eventemitter2@5.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/hij1nx/EventEmitter2
+│  ├─ publisher: hij1nx
+│  ├─ email: paolo@async.ly
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/eventemitter2
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/eventemitter2/LICENSE.txt
+├─ events@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Gozala/events
+│  ├─ publisher: Irakli Gozalishvili
+│  ├─ email: rfobic@gmail.com
+│  ├─ url: http://jeditoolkit.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/events
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/events/LICENSE
+├─ extend@1.3.0
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/justmoon/node-extend
+│  ├─ publisher: Stefan Thomas
+│  ├─ email: justmoon@members.fsf.org
+│  ├─ url: http://www.justmoon.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/extend
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/extend/LICENSE
+├─ extend@3.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/justmoon/node-extend
+│  ├─ publisher: Stefan Thomas
+│  ├─ email: justmoon@members.fsf.org
+│  ├─ url: http://www.justmoon.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/node_modules/extend
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/node_modules/extend/LICENSE
+├─ extsprintf@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/davepacheco/node-extsprintf
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/extsprintf
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/extsprintf/LICENSE
+├─ extsprintf@1.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/davepacheco/node-extsprintf
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsprim/node_modules/extsprintf
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsprim/node_modules/extsprintf/LICENSE
+├─ fast-deep-equal@2.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/fast-deep-equal
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-deep-equal
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-deep-equal/LICENSE
+├─ fast-json-patch@0.5.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Starcounter-Jack/JSON-Patch
+│  ├─ publisher: Joachim Wester
+│  ├─ email: joachimwester@me.com
+│  ├─ url: http://www.starcounter.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-json-patch
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-json-patch/LICENSE.txt
+├─ fast-json-stable-stringify@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/fast-json-stable-stringify
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-json-stable-stringify
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-json-stable-stringify/LICENSE
+├─ fast-levenshtein@2.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/hiddentao/fast-levenshtein
+│  ├─ publisher: Ramesh Nair
+│  ├─ email: ram@hiddentao.com
+│  ├─ url: http://www.hiddentao.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-levenshtein
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/fast-levenshtein/LICENSE.md
+├─ filed@0.1.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/mikeal/filed
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/filed
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/filed/README.md
+├─ forever-agent@0.6.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/mikeal/forever-agent
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ url: http://www.futurealoof.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/forever-agent
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/forever-agent/LICENSE
+├─ form-data@2.3.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/form-data/form-data
+│  ├─ publisher: Felix Geisendörfer
+│  ├─ email: felix@debuggable.com
+│  ├─ url: http://debuggable.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/form-data
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/form-data/License
+├─ fs-minipass@1.2.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/fs-minipass
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/fs-minipass
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/fs-minipass/LICENSE
+├─ fs.realpath@1.0.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/fs.realpath
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/fs.realpath
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/fs.realpath/LICENSE
+├─ gapitoken@0.1.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/bsphere/node-gapitoken
+│  ├─ publisher: Gal Ben-Haim
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/gapitoken
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/gapitoken/README.md
+├─ gauge@2.7.4
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/iarna/gauge
+│  ├─ publisher: Rebecca Turner
+│  ├─ email: me@re-becca.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/gauge
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/gauge/LICENSE
+├─ gcloud@0.10.0
+│  ├─ licenses: Apache*
+│  ├─ repository: https://github.com/googlecloudplatform/gcloud-nodejs
+│  ├─ publisher: Google Inc.
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/gcloud
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/gcloud/COPYING
+├─ get-stdin@4.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/get-stdin
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/get-stdin
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/get-stdin/readme.md
+├─ getpass@0.1.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/arekinath/node-getpass
+│  ├─ publisher: Alex Wilson
+│  ├─ email: alex.wilson@joyent.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/getpass
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/getpass/LICENSE
+├─ glob@3.2.11
+│  ├─ licenses: BSD*
+│  ├─ repository: https://github.com/isaacs/node-glob
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/glob
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/glob/LICENSE
+├─ glob@7.1.3
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-glob
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/glob
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/glob/LICENSE
+├─ growl@1.9.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tj/node-growl
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/growl
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/growl/Readme.md
+├─ grpc@1.16.1
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/grpc/grpc-node
+│  ├─ publisher: Google Inc.
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/README.md
+├─ handlebars@4.0.12
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/wycats/handlebars.js
+│  ├─ publisher: Yehuda Katz
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/handlebars
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/handlebars/LICENSE
+├─ har-schema@2.0.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/ahmadnassri/har-schema
+│  ├─ publisher: Ahmad Nassri
+│  ├─ email: ahmad@ahmadnassri.com
+│  ├─ url: https://www.ahmadnassri.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/har-schema
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/har-schema/LICENSE
+├─ har-validator@5.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ahmadnassri/node-har-validator
+│  ├─ publisher: Ahmad Nassri
+│  ├─ email: ahmad@ahmadnassri.com
+│  ├─ url: https://www.ahmadnassri.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/har-validator
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/har-validator/LICENSE
+├─ has-unicode@2.0.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/iarna/has-unicode
+│  ├─ publisher: Rebecca Turner
+│  ├─ email: me@re-becca.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/has-unicode
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/has-unicode/LICENSE
+├─ http-signature@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/joyent/node-http-signature
+│  ├─ publisher: Joyent, Inc
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/http-signature
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/http-signature/LICENSE
+├─ iconv-lite@0.4.24
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ashtuchkin/iconv-lite
+│  ├─ publisher: Alexander Shtuchkin
+│  ├─ email: ashtuchkin@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/iconv-lite
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/iconv-lite/LICENSE
+├─ ieee754@1.1.8
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/feross/ieee754
+│  ├─ publisher: Feross Aboukhadijeh
+│  ├─ email: feross@feross.org
+│  ├─ url: http://feross.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ieee754
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ieee754/LICENSE
+├─ ignore-walk@3.0.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/ignore-walk
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ignore-walk
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ignore-walk/LICENSE
+├─ indent-string@1.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/indent-string
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/indent-string
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/indent-string/license
+├─ inflight@1.0.6
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/inflight
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/inflight
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/inflight/LICENSE
+├─ inherits@2.0.3
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/inherits
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/inherits
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/inherits/LICENSE
+├─ ini@1.3.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/ini
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ini
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ini/LICENSE
+├─ invert-kv@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/invert-kv
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/invert-kv
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/invert-kv/readme.md
+├─ ip@1.1.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/indutny/node-ip
+│  ├─ publisher: Fedor Indutny
+│  ├─ email: fedor@indutny.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ip
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ip/README.md
+├─ is-finite@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/is-finite
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/is-finite
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/is-finite/license
+├─ is-fullwidth-code-point@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/is-fullwidth-code-point
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/is-fullwidth-code-point
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/is-fullwidth-code-point/license
+├─ is-typedarray@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/hughsk/is-typedarray
+│  ├─ publisher: Hugh Kennedy
+│  ├─ email: hughskennedy@gmail.com
+│  ├─ url: http://hughsk.io/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/is-typedarray
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/is-typedarray/LICENSE.md
+├─ isarray@0.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/isarray
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/isarray
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/isarray/README.md
+├─ isarray@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/juliangruber/isarray
+│  ├─ publisher: Julian Gruber
+│  ├─ email: mail@juliangruber.com
+│  ├─ url: http://juliangruber.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/buffer/node_modules/isarray
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/buffer/node_modules/isarray/README.md
+├─ isstream@0.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rvagg/isstream
+│  ├─ publisher: Rod Vagg
+│  ├─ email: rod@vagg.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/isstream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/isstream/LICENSE.md
+├─ jade@0.26.3
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/visionmedia/jade
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jade
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jade/LICENSE
+├─ jison-lex@0.2.1
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/zaach/jison-lex
+│  ├─ publisher: Zach Carter
+│  ├─ email: zach@carter.name
+│  ├─ url: http://zaa.ch
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jison-lex
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jison-lex/README.md
+├─ jison@0.4.13
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/zaach/jison
+│  ├─ publisher: Zach Carter
+│  ├─ email: zach@carter.name
+│  ├─ url: http://zaa.ch
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jison
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jison/README.md
+├─ jmespath@0.15.0
+│  ├─ licenses: Apache 2.0
+│  ├─ repository: https://github.com/jmespath/jmespath.js
+│  ├─ publisher: James Saryerwinnie
+│  ├─ email: js@jamesls.com
+│  ├─ url: http://jamesls.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jmespath
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jmespath/LICENSE
+├─ jsbn@0.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/andyperlitch/jsbn
+│  ├─ publisher: Tom Wu
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsbn
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsbn/LICENSE
+├─ json-schema-traverse@0.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/epoberezkin/json-schema-traverse
+│  ├─ publisher: Evgeny Poberezkin
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/json-schema-traverse
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/json-schema-traverse/LICENSE
+├─ json-schema@0.2.3
+│  ├─ licenses
+│  │  ├─ 0: AFLv2.1
+│  │  └─ 1: BSD
+│  ├─ repository: https://github.com/kriszyp/json-schema
+│  ├─ publisher: Kris Zyp
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/json-schema
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/json-schema/README.md
+├─ json-stringify-safe@5.0.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/json-stringify-safe
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/json-stringify-safe
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/json-stringify-safe/LICENSE
+├─ jsonpath@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dchester/jsonpath
+│  ├─ publisher: david@fmail.co.uk
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsonpath
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsonpath/LICENSE
+├─ jsprim@1.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/joyent/node-jsprim
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsprim
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsprim/LICENSE
+├─ jwa@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/brianloveswords/node-jwa
+│  ├─ publisher: Brian J. Brennan
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jwa
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jwa/LICENSE
+├─ jws@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/brianloveswords/node-jws
+│  ├─ publisher: Brian J Brennan
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jws
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jws/LICENSE
+├─ lcid@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/lcid
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lcid
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lcid/license
+├─ levn@0.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/levn
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/levn
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/levn/LICENSE
+├─ lex-parser@0.1.4
+│  ├─ licenses: MIT
+│  ├─ publisher: Zach Carter
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lex-parser
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lex-parser/README.md
+├─ liboneandone@1.2.0
+│  ├─ licenses: BSD*
+│  ├─ repository: https://github.com/temp/temp
+│  ├─ publisher: alibaz
+│  ├─ email: ali@stackpointcloud.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/liboneandone
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/liboneandone/LICENSE
+├─ lodash@4.17.11
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/lodash/lodash
+│  ├─ publisher: John-David Dalton
+│  ├─ email: john.david.dalton@gmail.com
+│  ├─ url: http://allyoucanleet.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lodash
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lodash/LICENSE
+├─ long@2.4.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/Long.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/long
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/long/LICENSE
+├─ long@3.2.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/long.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/long
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/long/LICENSE
+├─ lru-cache@2.7.3
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/node-lru-cache
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lru-cache
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/lru-cache/LICENSE
+├─ map-obj@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/map-obj
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/map-obj
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/map-obj/license
+├─ meow@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/meow
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/meow
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/meow/readme.md
+├─ mime-db@1.37.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jshttp/mime-db
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mime-db
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mime-db/LICENSE
+├─ mime-types@2.1.21
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jshttp/mime-types
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mime-types
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mime-types/LICENSE
+├─ mime@1.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/broofa/node-mime
+│  ├─ publisher: Robert Kieffer
+│  ├─ email: robert@broofa.com
+│  ├─ url: http://github.com/broofa
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mime
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mime/LICENSE
+├─ minimatch@0.3.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/isaacs/minimatch
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/minimatch
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/minimatch/LICENSE
+├─ minimatch@3.0.4
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/minimatch
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/minimatch
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/minimatch/LICENSE
+├─ minimist@0.0.10
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/minimist
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/minimist
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/minimist/LICENSE
+├─ minimist@0.0.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/minimist
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mkdirp/node_modules/minimist
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mkdirp/node_modules/minimist/LICENSE
+├─ minimist@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/minimist
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/indent-string/node_modules/minimist
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/indent-string/node_modules/minimist/LICENSE
+├─ minipass@2.3.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/minipass
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/minipass
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/minipass/LICENSE
+├─ minizlib@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/isaacs/minizlib
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/minizlib
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/minizlib/LICENSE
+├─ mkdirp@0.3.0
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/substack/node-mkdirp
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jade/node_modules/mkdirp
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jade/node_modules/mkdirp/LICENSE
+├─ mkdirp@0.5.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/node-mkdirp
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mkdirp
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mkdirp/LICENSE
+├─ mocha@2.5.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mochajs/mocha
+│  ├─ publisher: TJ Holowaychuk
+│  ├─ email: tj@vision-media.ca
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mocha
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mocha/LICENSE
+├─ mock-spawn@0.2.6
+│  ├─ licenses: BSD*
+│  ├─ repository: https://github.com/gotwarlost/mock-spawn
+│  ├─ publisher: Krishnan Anantheswaran
+│  ├─ email: kananthmail-github@yahoo.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mock-spawn
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/mock-spawn/LICENSE
+├─ ms@0.7.1
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/guille/ms.js
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ms
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ms/LICENSE
+├─ ms@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/zeit/ms
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ms
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/ms/license.md
+├─ nan@2.12.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodejs/nan
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/nan
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/nan/LICENSE.md
+├─ needle@2.2.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tomas/needle
+│  ├─ publisher: Tomás Pollak
+│  ├─ email: tomas@forkhq.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/needle
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/needle/license.txt
+├─ node-ansible@0.5.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/shaharke/node-ansible
+│  ├─ publisher: Shahar Kedar
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/node-ansible
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/node-ansible/LICENSE
+├─ node-pre-gyp@0.12.0
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/mapbox/node-pre-gyp
+│  ├─ publisher: Dane Springmeyer
+│  ├─ email: dane@mapbox.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/node-pre-gyp
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/node-pre-gyp/LICENSE
+├─ node-red-contrib-vino@1.0.0
+│  ├─ licenses: Apache-2.0
+│  ├─ publisher: Centurylink, INC
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/README.md
+├─ node-uuid@1.4.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/broofa/node-uuid
+│  ├─ publisher: Robert Kieffer
+│  ├─ email: robert@broofa.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/gcloud/node_modules/node-uuid
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/gcloud/node_modules/node-uuid/LICENSE.md
+├─ nomnom@1.5.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/harthur/nomnom
+│  ├─ publisher: Heather Arthur
+│  ├─ email: fayearthur@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/nomnom
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/nomnom/README.md
+├─ nopt@4.0.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/nopt
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/nopt
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/nopt/LICENSE
+├─ npm-bundled@1.0.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/npm-bundled
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/npm-bundled
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/npm-bundled/LICENSE
+├─ npm-packlist@1.1.12
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/npm-packlist
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/npm-packlist
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/npm-packlist/LICENSE
+├─ npmlog@4.1.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/npmlog
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/npmlog
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/npmlog/LICENSE
+├─ number-is-nan@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/number-is-nan
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/number-is-nan
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/number-is-nan/license
+├─ oauth-sign@0.9.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/mikeal/oauth-sign
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ url: http://www.futurealoof.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/oauth-sign
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/oauth-sign/LICENSE
+├─ object-assign@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/object-assign
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/object-assign
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/object-assign/readme.md
+├─ object-assign@4.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/object-assign
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/object-assign
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/object-assign/license
+├─ once@1.4.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/once
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/once
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/once/LICENSE
+├─ optimist@0.6.1
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/substack/node-optimist
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optimist
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optimist/LICENSE
+├─ optionator@0.8.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/optionator
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optionator
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optionator/LICENSE
+├─ optjs@3.2.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dcodeIO/opt.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optjs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optjs/README.md
+├─ os-homedir@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/os-homedir
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/os-homedir
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/os-homedir/license
+├─ os-locale@1.4.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/os-locale
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/os-locale
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/os-locale/license
+├─ os-tmpdir@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/os-tmpdir
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/os-tmpdir
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/os-tmpdir/license
+├─ osenv@0.1.5
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/osenv
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/osenv
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/osenv/LICENSE
+├─ path-is-absolute@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/path-is-absolute
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/path-is-absolute
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/path-is-absolute/license
+├─ performance-now@2.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/braveg1rl/performance-now
+│  ├─ publisher: Braveg1rl
+│  ├─ email: braveg1rl@outlook.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/performance-now
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/performance-now/license.txt
+├─ pkgcloud@1.6.0
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/pkgcloud/pkgcloud
+│  ├─ publisher: Charlie Robbins
+│  ├─ email: charlie.robbins@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/pkgcloud
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/pkgcloud/LICENSE
+├─ prelude-ls@1.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/prelude-ls
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/prelude-ls
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/prelude-ls/LICENSE
+├─ process-nextick-args@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/calvinmetcalf/process-nextick-args
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/process-nextick-args
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/process-nextick-args/license.md
+├─ protobufjs@3.8.2
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/ProtoBuf.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/protobufjs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/protobufjs/LICENSE
+├─ protobufjs@5.0.3
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/dcodeIO/protobuf.js
+│  ├─ publisher: Daniel Wirtz
+│  ├─ email: dcode@dcode.io
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/protobufjs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/protobufjs/LICENSE
+├─ psl@1.1.31
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/wrangr/psl
+│  ├─ publisher: Lupo Montero
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/psl
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/psl/LICENSE
+├─ punycode@1.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/bestiejs/punycode.js
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/punycode
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/punycode/LICENSE-MIT.txt
+├─ punycode@1.4.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/bestiejs/punycode.js
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tough-cookie/node_modules/punycode
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tough-cookie/node_modules/punycode/LICENSE-MIT.txt
+├─ punycode@2.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/bestiejs/punycode.js
+│  ├─ publisher: Mathias Bynens
+│  ├─ url: https://mathiasbynens.be/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uri-js/node_modules/punycode
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uri-js/node_modules/punycode/LICENSE-MIT.txt
+├─ q@1.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kriskowal/q
+│  ├─ publisher: Kris Kowal
+│  ├─ email: kris@cixar.com
+│  ├─ url: https://github.com/kriskowal
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/q
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/q/LICENSE
+├─ qs@6.5.2
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/ljharb/qs
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/node_modules/qs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/node_modules/qs/LICENSE
+├─ qs@6.6.0
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/ljharb/qs
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/qs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/qs/LICENSE
+├─ querystring@0.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Gozala/querystring
+│  ├─ publisher: Irakli Gozalishvili
+│  ├─ email: rfobic@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/querystring
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/querystring/License.md
+├─ rc@1.2.8
+│  ├─ licenses: (BSD-2-Clause OR MIT OR Apache-2.0)
+│  ├─ repository: https://github.com/dominictarr/rc
+│  ├─ publisher: Dominic Tarr
+│  ├─ email: dominic.tarr@gmail.com
+│  ├─ url: dominictarr.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/rc
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/rc/LICENSE.APACHE2
+├─ readable-stream@1.0.34
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/isaacs/readable-stream
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/readable-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/readable-stream/LICENSE
+├─ readable-stream@1.1.14
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/isaacs/readable-stream
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/concat-stream/node_modules/readable-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/concat-stream/node_modules/readable-stream/LICENSE
+├─ readable-stream@2.3.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodejs/readable-stream
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/duplexify/node_modules/readable-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/duplexify/node_modules/readable-stream/LICENSE
+├─ repeating@1.1.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/repeating
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/repeating
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/repeating/license
+├─ request@2.88.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/request/request
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/LICENSE
+├─ retry@0.12.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/tim-kos/node-retry
+│  ├─ publisher: Tim Koschützki
+│  ├─ email: tim@debuggable.com
+│  ├─ url: http://debuggable.com/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/retry
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/retry/License
+├─ rimraf@2.6.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/rimraf
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/rimraf
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/rimraf/LICENSE
+├─ s3-upload-stream@1.0.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nathanpeck/s3-upload-stream
+│  ├─ publisher: Nathan Peck
+│  ├─ email: nathan@storydesk.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/s3-upload-stream
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/s3-upload-stream/LICENSE
+├─ safe-buffer@5.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/feross/safe-buffer
+│  ├─ publisher: Feross Aboukhadijeh
+│  ├─ email: feross@feross.org
+│  ├─ url: http://feross.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/safe-buffer
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/safe-buffer/LICENSE
+├─ safer-buffer@2.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/ChALkeR/safer-buffer
+│  ├─ publisher: Nikita Skovoroda
+│  ├─ email: chalkerx@gmail.com
+│  ├─ url: https://github.com/ChALkeR
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/safer-buffer
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/safer-buffer/LICENSE
+├─ sax@1.2.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/sax-js
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sdk/node_modules/sax
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/aws-sdk/node_modules/sax/LICENSE
+├─ sax@1.2.4
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/sax-js
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/sax
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/sax/LICENSE
+├─ semver@5.6.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/node-semver
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/semver
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/semver/LICENSE
+├─ set-blocking@2.0.0
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/yargs/set-blocking
+│  ├─ publisher: Ben Coe
+│  ├─ email: ben@npmjs.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/set-blocking
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/set-blocking/LICENSE.txt
+├─ sigmund@1.0.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/sigmund
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/sigmund
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/sigmund/LICENSE
+├─ signal-exit@3.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/tapjs/signal-exit
+│  ├─ publisher: Ben Coe
+│  ├─ email: ben@npmjs.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/signal-exit
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/signal-exit/LICENSE.txt
+├─ source-map@0.6.1
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/mozilla/source-map
+│  ├─ publisher: Nick Fitzgerald
+│  ├─ email: nfitzgerald@mozilla.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/source-map
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/source-map/LICENSE
+├─ ssh2-streams@0.0.23
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mscdex/ssh2-streams
+│  ├─ publisher: Brian White
+│  ├─ email: mscdex@mscdex.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ssh2-streams
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ssh2-streams/LICENSE
+├─ ssh2@0.4.15
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mscdex/ssh2
+│  ├─ publisher: Brian White
+│  ├─ email: mscdex@mscdex.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ssh2
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/ssh2/LICENSE
+├─ sshpk@1.15.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/joyent/node-sshpk
+│  ├─ publisher: Joyent, Inc
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/sshpk
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/sshpk/LICENSE
+├─ static-eval@2.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/static-eval
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/static-eval/LICENSE
+├─ stream-events@1.0.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/stephenplusplus/stream-events
+│  ├─ publisher: Stephen Sawchuk
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/stream-events
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/stream-events/readme.md
+├─ stream-shift@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mafintosh/stream-shift
+│  ├─ publisher: Mathias Buus
+│  ├─ url: @mafintosh
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/stream-shift
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/stream-shift/LICENSE
+├─ streamsearch@0.1.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/mscdex/streamsearch
+│  ├─ publisher: Brian White
+│  ├─ email: mscdex@mscdex.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/streamsearch
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/streamsearch/LICENSE
+├─ string-width@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/string-width
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/string-width
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/string-width/license
+├─ string_decoder@0.10.31
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rvagg/string_decoder
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/string_decoder
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/string_decoder/LICENSE
+├─ string_decoder@1.1.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/nodejs/string_decoder
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/duplexify/node_modules/string_decoder
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/duplexify/node_modules/string_decoder/LICENSE
+├─ strip-ansi@3.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/strip-ansi
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/strip-ansi
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/strip-ansi/license
+├─ strip-json-comments@2.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/strip-json-comments
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/strip-json-comments
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/strip-json-comments/license
+├─ stubs@3.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/stephenplusplus/stubs
+│  ├─ publisher: Stephen Sawchuk
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/stubs
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/stubs/readme.md
+├─ supports-color@1.2.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/sindresorhus/supports-color
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: http://sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/supports-color
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/supports-color/readme.md
+├─ tar@4.4.8
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/node-tar
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/tar
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/tar/LICENSE
+├─ through2@0.6.5
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/rvagg/through2
+│  ├─ publisher: Rod Vagg
+│  ├─ email: r@va.gg
+│  ├─ url: https://github.com/rvagg
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/through2
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/through2/LICENSE
+├─ through@2.3.8
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/dominictarr/through
+│  ├─ publisher: Dominic Tarr
+│  ├─ email: dominic.tarr@gmail.com
+│  ├─ url: dominictarr.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/through
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/through/LICENSE.APACHE2
+├─ to-iso-string@0.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/segmentio/to-iso-string
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/to-iso-string
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/to-iso-string/Readme.md
+├─ tough-cookie@2.4.3
+│  ├─ licenses: BSD-3-Clause
+│  ├─ repository: https://github.com/salesforce/tough-cookie
+│  ├─ publisher: Jeremy Stashewsky
+│  ├─ email: jstash@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tough-cookie
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tough-cookie/LICENSE
+├─ tunnel-agent@0.6.0
+│  ├─ licenses: Apache-2.0
+│  ├─ repository: https://github.com/mikeal/tunnel-agent
+│  ├─ publisher: Mikeal Rogers
+│  ├─ email: mikeal.rogers@gmail.com
+│  ├─ url: http://www.futurealoof.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tunnel-agent
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tunnel-agent/LICENSE
+├─ tweetnacl@0.14.5
+│  ├─ licenses: Unlicense
+│  ├─ repository: https://github.com/dchest/tweetnacl-js
+│  ├─ publisher: TweetNaCl-js contributors
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tweetnacl
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/tweetnacl/LICENSE
+├─ type-check@0.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/gkz/type-check
+│  ├─ publisher: George Zahariev
+│  ├─ email: z@georgezahariev.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/type-check
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/type-check/LICENSE
+├─ typedarray@0.0.6
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/typedarray
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/typedarray
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/typedarray/LICENSE
+├─ uglify-js@3.4.9
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/mishoo/UglifyJS2
+│  ├─ publisher: Mihai Bazon
+│  ├─ email: mihai.bazon@gmail.com
+│  ├─ url: http://lisperator.net/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uglify-js
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uglify-js/LICENSE
+├─ underscore@1.1.7
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/documentcloud/underscore
+│  ├─ publisher: Jeremy Ashkenas
+│  ├─ email: jeremy@documentcloud.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/nomnom/node_modules/underscore
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/nomnom/node_modules/underscore/LICENSE
+├─ underscore@1.5.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jashkenas/underscore
+│  ├─ publisher: Jeremy Ashkenas
+│  ├─ email: jeremy@documentcloud.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/node-ansible/node_modules/underscore
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/node-ansible/node_modules/underscore/LICENSE
+├─ underscore@1.7.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jashkenas/underscore
+│  ├─ publisher: Jeremy Ashkenas
+│  ├─ email: jeremy@documentcloud.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/underscore
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/underscore/LICENSE
+├─ uri-js@4.2.2
+│  ├─ licenses: BSD-2-Clause
+│  ├─ repository: https://github.com/garycourt/uri-js
+│  ├─ publisher: Gary Court
+│  ├─ email: gary.court@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uri-js
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uri-js/README.md
+├─ url-join@0.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jfromaniello/url-join
+│  ├─ publisher: José F. Romaniello
+│  ├─ email: jfromaniello@gmail.com
+│  ├─ url: http://joseoncode.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/url-join
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/url-join/README.md
+├─ url@0.10.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/defunctzombie/node-url
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/url
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/url/LICENSE
+├─ util-deprecate@1.0.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/TooTallNate/util-deprecate
+│  ├─ publisher: Nathan Rajlich
+│  ├─ email: nathan@tootallnate.net
+│  ├─ url: http://n8.io/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/util-deprecate
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/util-deprecate/LICENSE
+├─ uuid@3.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kelektiv/node-uuid
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uuid
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/uuid/LICENSE.md
+├─ uuid@3.3.2
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/kelektiv/node-uuid
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/node_modules/uuid
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/request/node_modules/uuid/LICENSE.md
+├─ vasync@1.6.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/davepacheco/node-vasync
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/vasync
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/vasync/LICENSE
+├─ verror@1.10.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/davepacheco/node-verror
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsprim/node_modules/verror
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/jsprim/node_modules/verror/LICENSE
+├─ verror@1.6.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/davepacheco/node-verror
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/verror
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/verror/LICENSE
+├─ wide-align@1.1.3
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/iarna/wide-align
+│  ├─ publisher: Rebecca Turner
+│  ├─ email: me@re-becca.org
+│  ├─ url: http://re-becca.org/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/wide-align
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/wide-align/LICENSE
+├─ window-size@0.1.4
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/jonschlinkert/window-size
+│  ├─ publisher: Jon Schlinkert
+│  ├─ url: https://github.com/jonschlinkert
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/window-size
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/window-size/LICENSE
+├─ wordwrap@0.0.3
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/node-wordwrap
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/wordwrap
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/wordwrap/LICENSE
+├─ wordwrap@1.0.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/substack/node-wordwrap
+│  ├─ publisher: James Halliday
+│  ├─ email: mail@substack.net
+│  ├─ url: http://substack.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optionator/node_modules/wordwrap
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/optionator/node_modules/wordwrap/LICENSE
+├─ wrap-ansi@2.1.0
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/chalk/wrap-ansi
+│  ├─ publisher: Sindre Sorhus
+│  ├─ email: sindresorhus@gmail.com
+│  ├─ url: sindresorhus.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/wrap-ansi
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/wrap-ansi/license
+├─ wrappy@1.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/npm/wrappy
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/wrappy
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/wrappy/LICENSE
+├─ xml2js@0.1.14
+│  ├─ licenses: MIT*
+│  ├─ repository: https://github.com/Leonidas-from-XIV/node-xml2js
+│  ├─ publisher: Marek Kubica
+│  ├─ email: marek@xivilization.net
+│  ├─ url: http://xivilization.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/pkgcloud/node_modules/xml2js
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/pkgcloud/node_modules/xml2js/LICENSE
+├─ xml2js@0.4.19
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Leonidas-from-XIV/node-xml2js
+│  ├─ publisher: Marek Kubica
+│  ├─ email: marek@xivilization.net
+│  ├─ url: https://xivilization.net
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xml2js
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xml2js/LICENSE
+├─ xmlbuilder@9.0.7
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/oozcitak/xmlbuilder-js
+│  ├─ publisher: Ozgur Ozcitak
+│  ├─ email: oozcitak@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xmlbuilder
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xmlbuilder/LICENSE
+├─ xmldom@0.1.27
+│  ├─ licenses: LGPL
+│  ├─ repository: https://github.com/jindw/xmldom
+│  ├─ publisher: jindw
+│  ├─ email: jindw@xidea.org
+│  ├─ url: http://www.xidea.org
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xmldom
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xmldom/LICENSE
+├─ xpath@0.0.27
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/goto100/xpath
+│  ├─ publisher: Cameron McCormack
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xpath
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xpath/README.md
+├─ xtend@4.0.1
+│  ├─ licenses: MIT
+│  ├─ repository: https://github.com/Raynos/xtend
+│  ├─ publisher: Raynos
+│  ├─ email: raynos2@gmail.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xtend
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/xtend/LICENCE
+├─ y18n@3.2.1
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/yargs/y18n
+│  ├─ publisher: Ben Coe
+│  ├─ email: ben@npmjs.com
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/y18n
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/y18n/LICENSE
+├─ yallist@3.0.2
+│  ├─ licenses: ISC
+│  ├─ repository: https://github.com/isaacs/yallist
+│  ├─ publisher: Isaac Z. Schlueter
+│  ├─ email: i@izs.me
+│  ├─ url: http://blog.izs.me/
+│  ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/yallist
+│  └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/grpc/node_modules/yallist/LICENSE
+└─ yargs@3.32.0
+   ├─ licenses: MIT
+   ├─ repository: https://github.com/bcoe/yargs
+   ├─ publisher: Alex Ford
+   ├─ email: Alex.Ford@CodeTunnel.com
+   ├─ url: http://CodeTunnel.com
+   ├─ path: /home/jfaucher/projects/vino-node-red-nodes/node_modules/yargs
+   └─ licenseFile: /home/jfaucher/projects/vino-node-red-nodes/node_modules/yargs/LICENSE

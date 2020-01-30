@@ -1,0 +1,2740 @@
+{
+  "settings": {
+    "vinoDriverOpenstackCommonParameters": {
+      "value": [
+        {
+          "parameterName": "Openstack Username",
+          "parameterKey": "openstack_username",
+          "parameterDescription": "The username to use when authenticating",
+          "parameterType": "string",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/user"
+          }
+        },
+        {
+          "parameterName": "Openstack Password",
+          "parameterKey": "openstack_password",
+          "parameterDescription": "The password to use when authenticating",
+          "parameterType": "string",
+          "encrypt": true,
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/password"
+          }
+        },
+        {
+          "parameterName": "Openstack Domain Name",
+          "parameterKey": "openstack_domain_name",
+          "parameterDescription": "The domain to scope to",
+          "parameterType": "string",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/domainName"
+          }
+        },
+        {
+          "parameterName": "Openstack Tenant Identifier",
+          "parameterKey": "openstack_tenant_id",
+          "parameterDescription": "The openstack tenant to take actions on behalf of",
+          "parameterType": "string",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/tenantId"
+          }
+        },
+        {
+          "parameterName": "Openstack Tenant Name",
+          "parameterKey": "openstack_tenant_name",
+          "parameterDescription": "The openstack tenant to take actions on behalf of",
+          "parameterType": "string",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/tenantName"
+          }
+        },
+        {
+          "parameterName": "Openstack API Version",
+          "parameterKey": "openstack_api_version",
+          "parameterDescription": "The Openstack API version to use when making API calls",
+          "parameterType": "enumerated",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/apiVersion",
+            "options": [
+              "v2",
+              "v3"
+            ]
+          }
+        },
+        {
+          "parameterName": "Openstack Auth URL",
+          "parameterKey": "openstack_auth_url",
+          "parameterDescription": "The endpoint URL for authenticating and running web service commands",
+          "parameterType": "string",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/authUrl"
+          }
+        },
+        {
+          "parameterName": "Openstack Region Name",
+          "parameterKey": "openstack_region_name",
+          "parameterDescription": "The openstack region to use when interacting with the API",
+          "parameterType": "string",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/regionName",
+            "isOptional": true
+          }
+        },
+        {
+          "parameterName": "Allow Insecure Connections",
+          "parameterKey": "openstack_allow_insecure_connections",
+          "parameterDescription": "When set to true, this option will allow ViNO to connect to Openstack systems over insecure connections",
+          "parameterType": "boolean",
+          "inputDetails": {
+            "fromConstants": true,
+            "constantsPath": "openstack/allowInsecureConnections"
+          }
+        },
+        {
+          "parameterName": "Number of Retries",
+          "parameterKey": "retries",
+          "parameterDescription": "(Optional) The number of times to retry asynchronous operations. Defaults to 5.",
+          "parameterType": "number",
+          "inputDetails": {
+            "isOptional": true
+          }
+        },
+        {
+          "parameterName": "Retry Backoff Factor",
+          "parameterKey": "retryBackoffFactor",
+          "parameterDescription": "(Optional) The factor to use when employing an exponential backoff strategy. Defaults to 3",
+          "parameterType": "number",
+          "inputDetails": {
+            "isOptional": true
+          }
+        },
+        {
+          "parameterName": "Retry Timeout",
+          "parameterKey": "retryTimeout",
+          "parameterDescription": "(Optional) The number of milliseconds to wait between retry attempts. Setting this value will disable the exponential backoff strategy.",
+          "parameterType": "number",
+          "inputDetails": {
+            "isOptional": true
+          }
+        },
+        {
+          "parameterName": "Minimum Timeout",
+          "parameterKey": "minTimeout",
+          "parameterDescription": "(Optional) The minimum number of milliseconds to wait between retry attempts. This value will be used when employing an exponential backoff strategy. Defaults to 10 seconds (10,000 milliseconds).",
+          "parameterType": "number",
+          "inputDetails": {
+            "isOptional": true
+          }
+        },
+        {
+          "parameterName": "Maximum Timeout",
+          "parameterKey": "maxTimeout",
+          "parameterDescription": "(Optional) The maximum number of milliseconds to wait between retry attempts. This value will be used when employing an exponential backoff strategy. Defaults to 60 seconds (60,000 milliseconds).",
+          "parameterType": "number",
+          "inputDetails": {
+            "isOptional": true
+          }
+        }
+      ],
+      "exportable": true
+    },
+    "vinoDriverOpenstackCommands": {
+      "value": [
+        {
+          "name": "Get Networks",
+          "key": "Openstack_Driver_Get_Networks",
+          "description": "Use to get a list of available Openstack networks.",
+          "category": "Networks",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Network",
+          "key": "Openstack_Driver_Get_Network",
+          "description": "Use to get the details of a specific network given a Network ID",
+          "category": "Networks",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Network ID",
+              "parameterKey": "openstack_network_id",
+              "parameterDescription": "The identifier of the network to get detailed information about",
+              "parameterType": "string",
+              "inputDetails": {}
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Network",
+          "key": "Openstack_Driver_Network",
+          "category": "Networks",
+          "description": "Use to create an Openstack Network",
+          "inputParameters": [
+            {
+              "parameterName": "Network Name",
+              "parameterKey": "openstack_network_name",
+              "parameterDescription": "If present, the system will attempt to use this name as the name of the Network.  If the name already exists, the Network creation will fail",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Network Admin State Up",
+              "parameterKey": "openstack_network_admin_state_up",
+              "parameterDescription": "\tThe administrative state of the network, which is up (true) or down (false). Defaults to false.",
+              "parameterType": "boolean"
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Network Shared",
+              "parameterKey": "openstack_network_shared",
+              "parameterDescription": "Indicates whether this resource is shared across all projects.  Defaults to false.",
+              "parameterType": "boolean"
+            },
+            {
+              "parameterName": "DNS Domain",
+              "parameterKey": "openstack_network_dns_domain",
+              "parameterDescription": "(Optional) The dns_domain of a network in conjunction with the dns_name attribute of its ports will be published in an external DNS service when Neutron is configured to integrate with such a service.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "booleanValue": true,
+              "parameterName": "Port Security Enabled",
+              "parameterKey": "openstack_port_security_enabled",
+              "parameterType": "boolean",
+              "parameterDescription": " At the network level, port_security_enabled defines the default value for new ports attached to the network; they will inherit the value of their network’s port_security_enabled unless explicitly set on the port itself. Defaults to true."
+            },
+            {
+              "parameterName": "Openstack Project ID",
+              "parameterKey": "openstack_project_id",
+              "parameterType": "string",
+              "parameterDescription": "(Optional) The ID of the project that owns the resource. Only administrative and users with advsvc role can specify a project ID other than their own. You cannot change this value through authorization policies.",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network Type",
+              "parameterKey": "openstack_network_type",
+              "parameterDescription": "The type of Network to create, as defined in Neutron\"s NetworkType enum.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "flat",
+                  "gre",
+                  "local",
+                  "vlan",
+                  "vxlan"
+                ]
+              }
+            },
+            {
+              "parameterName": "Physical Network Name",
+              "parameterKey": "physical_network_name",
+              "parameterDescription": "Name of the Network interface on the Host system.  How the Network is bound to a port in the host Virtual Machine system",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Network Segmentation ID",
+              "parameterKey": "openstack_network_segmentation_id",
+              "parameterDescription": "(Optional depending on the Network Type) The ID of the isolated segment on the physical network. The network_type attribute defines the segmentation model. For example, if the network_type value is vlan, this ID is a vlan identifier. If the network_type value is gre, this ID is a gre key.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "QOS Policy ID",
+              "parameterKey": "openstack_network_qos_policy_id",
+              "parameterDescription": "(Optional) The ID of the QoS policy associated with the network.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Network External",
+              "parameterKey": "openstack_network_external",
+              "parameterDescription": "(Optional) Indicates whether the network has an external routing facility that’s not managed by the networking service.  Defaults to false",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "VLAN Transparent",
+              "parameterKey": "openstack_network_vlan_transparent",
+              "parameterDescription": "(Optional) Indicates the VLAN transparency mode of the network, which is VLAN transparent (true) or not VLAN transparent (false).",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network Description",
+              "parameterKey": "openstack_network_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Default Network",
+              "parameterKey": "openstack_network_is_default",
+              "parameterDescription": "(Optional) Indicates whether or not this network is the default network. Default value is false.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Availability Zone Hints",
+              "parameterKey": "openstack_network_availability_zone_hints",
+              "parameterDescription": "(Optional) The availability zone candidate for the network.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_network_id",
+              "parameterDescription": "The id of the Network that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Network Name",
+              "parameterKey": "openstack_network_name",
+              "parameterDescription": "The name of the Network that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Modify Network",
+          "key": "Openstack_Driver_Network_Modify",
+          "description": "Use to modify an Openstack Network",
+          "category": "Networks",
+          "inputParameters": [
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_network_id",
+              "parameterDescription": "The id of the Openstack Network to modify.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Network Name",
+              "parameterKey": "openstack_network_name",
+              "parameterDescription": "The system will attempt to use this name as the name of the Network.  If the name already exists, the Network creation will fail",
+              "parameterType": "string",
+              "inputDetails": {}
+            },
+            {
+              "parameterName": "Network Admin State Up",
+              "parameterKey": "openstack_network_admin_state_up",
+              "parameterDescription": "(Optional) The administrative state of the network, which is up (true) or down (false).",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network Shared",
+              "parameterKey": "openstack_network_shared",
+              "parameterDescription": "(Optional) Indicates whether this resource is shared across all projects.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "DNS Domain",
+              "parameterKey": "openstack_network_dns_domain",
+              "parameterDescription": "(Optional) The dns_domain of a network in conjunction with the dns_name attribute of its ports will be published in an external DNS service when Neutron is configured to integrate with such a service.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Port Security Enabled",
+              "parameterKey": "openstack_port_security_enabled",
+              "parameterType": "boolean",
+              "parameterDescription": " (Optional) At the network level, port_security_enabled defines the default value for new ports attached to the network; they will inherit the value of their network’s port_security_enabled unless explicitly set on the port itself.",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network Type",
+              "parameterKey": "openstack_network_type",
+              "parameterDescription": "(Optional) The type of Network to create, as defined in Neutron\"s NetworkType enum.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "flat",
+                  "gre",
+                  "local",
+                  "vlan",
+                  "vxlan"
+                ],
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Physical Network Name",
+              "parameterKey": "physical_network_name",
+              "parameterDescription": "(Optional) Name of the Network interface on the Host system.  How the Network is bound to a port in the host Virtual Machine system",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network Segmentation ID",
+              "parameterKey": "openstack_network_segmentation_id",
+              "parameterDescription": "(Optional) The ID of the isolated segment on the physical network. The network_type attribute defines the segmentation model. For example, if the network_type value is vlan, this ID is a vlan identifier. If the network_type value is gre, this ID is a gre key.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "QOS Policy ID",
+              "parameterKey": "openstack_network_qos_policy_id",
+              "parameterDescription": "(Optional) The ID of the QoS policy associated with the network.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network External",
+              "parameterKey": "openstack_network_external",
+              "parameterDescription": "(Optional) Indicates whether the network has an external routing facility that’s not managed by the networking service.  Defaults to false",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network Description",
+              "parameterKey": "openstack_network_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Default Network",
+              "parameterKey": "openstack_network_id_default",
+              "parameterDescription": "(Optional) Indicates whether or not this network is the default network.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_network_id",
+              "parameterDescription": "The id of the Network that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Network Name",
+              "parameterKey": "openstack_network_name",
+              "parameterDescription": "The name of the Network that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Network",
+          "key": "Openstack_Driver_Network_Delete",
+          "description": "Use to delete an Openstack Network",
+          "category": "Networks",
+          "inputParameters": [
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_network_id",
+              "parameterDescription": "The id of the Network to delete",
+              "parameterType": "string",
+              "inputDetails": {}
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Subnets",
+          "key": "Openstack_Driver_Get_Subnets",
+          "description": "Gets a list of available Openstack Subnets",
+          "category": "Subnets",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Subnet",
+          "key": "Openstack_Driver_Get_Subnet",
+          "description": "Gets the details of a specified Openstack Subnet",
+          "category": "Subnets",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Subnet ID",
+              "parameterKey": "openstack_subnet_id",
+              "parameterDescription": "The ID of the Openstack Subnet to get detailed information on.",
+              "parameterType": "string",
+              "inputDetails": {}
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Subnet",
+          "key": "Openstack_Driver_Subnet",
+          "description": "Use to create a generic Openstack Subnet",
+          "category": "Subnets",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Subnet Name",
+              "parameterKey": "openstack_subnet_name",
+              "parameterDescription": "(Optional) Human-readable name of the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Openstack Project ID",
+              "parameterKey": "openstack_project_id",
+              "parameterType": "string",
+              "parameterDescription": "(Optional) The ID of the project that owns the resource. Only administrative and users with advsvc role can specify a project ID other than their own. You cannot change this value through authorization policies.",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Subnet Enable DHCP",
+              "parameterKey": "openstack_subnet_enable_dhcp",
+              "parameterDescription": "Boolean for whether or not DHCP is enabled on this Subnet.  Defaults to false",
+              "parameterType": "boolean"
+            },
+            {
+              "parameterName": "DNS Nameservers",
+              "parameterKey": "openstack_subnet_dns_nameservers",
+              "parameterDescription": "(Optional) List of dns name servers associated with the subnet. Default is an empty list.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_subnet_network_id",
+              "parameterDescription": "The ID of the network to which the subnet belongs.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Subnet CIDR",
+              "parameterKey": "openstack_subnet_cidr",
+              "parameterDescription": "The CIDR to assign to this Subnet",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "IP Version",
+              "parameterKey": "ip_version",
+              "parameterDescription": "The IP version to use when creating an address for this Subnet.  Defaults to 4",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "4",
+                  "6"
+                ],
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Gateway IP",
+              "parameterKey": "openstack_subnet_gateway_ip",
+              "parameterDescription": "(Optional) Gateway IP of this subnet. If the value is null that implies no gateway is associated with the subnet. If the gateway_ip is not specified, OpenStack Networking allocates an address from the CIDR for the gateway for the subnet by default.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_subnet_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "prefixlen",
+              "parameterKey": "openstack_subnet_prefixlen",
+              "parameterDescription": "(Optional) The prefix length to use for subnet allocation from a subnet pool. If not specified, the default_prefixlen value of the subnet pool will be used.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "IPV6 Address Mode",
+              "parameterKey": "openstack_subnet_ipv6_address_mode",
+              "parameterDescription": "(Optional) The IPv6 address modes specifies mechanisms for assigning IP addresses. Value is slaac, dhcpv6-stateful, dhcpv6-stateless.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "N/A",
+                  "slaac",
+                  "dhcpv6-stateful, dhcpv6-stateless"
+                ]
+              }
+            },
+            {
+              "parameterName": "IPV6 RA Mode",
+              "parameterKey": "openstack_subnet_ipv6_ra_mode",
+              "parameterDescription": "(Optional) The IPv6 router advertisement specifies whether the networking service should transmit ICMPv6 packets, for a subnet. Value is slaac, dhcpv6-stateful, dhcpv6-stateless.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "N/A",
+                  "slaac",
+                  "dhcpv6-stateful, dhcpv6-stateless"
+                ]
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Subnet ID",
+              "parameterKey": "openstack_subnet_id",
+              "parameterDescription": "The identifier of the Subnet that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Subnet Name",
+              "parameterKey": "openstack_subnet_name",
+              "parameterDescription": "The name of the Subnet that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Modify Subnet",
+          "key": "Openstack_Driver_Modify_Subnet",
+          "description": "Use to create a generic Openstack Subnet",
+          "category": "Subnets",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Subnet ID",
+              "parameterKey": "openstack_subnet_id",
+              "parameterDescription": "The ID of the Openstack Subnet to modify.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Openstack Subnet Name",
+              "parameterKey": "openstack_subnet_name",
+              "parameterDescription": "(Optional) Human-readable name of the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Enable DHCP",
+              "parameterKey": "openstack_subnet_enable_dhcp",
+              "parameterDescription": "(Optional) Boolean for whether or not DHCP is enabled on this Subnet.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "DNS Nameservers",
+              "parameterKey": "openstack_subnet_dns_nameservers",
+              "parameterDescription": "(Optional) List of dns name servers associated with the subnet. Default is an empty list.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Gateway IP",
+              "parameterKey": "openstack_subnet_gateway_ip",
+              "parameterDescription": "(Optional) Gateway IP of this subnet. If the value is null that implies no gateway is associated with the subnet. If the gateway_ip is not specified, OpenStack Networking allocates an address from the CIDR for the gateway for the subnet by default.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_subnet_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Subnet ID",
+              "parameterKey": "openstack_subnet_id",
+              "parameterDescription": "The identifier of the Subnet that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Subnet Name",
+              "parameterKey": "openstack_subnet_name",
+              "parameterDescription": "The name of the Subnet that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Subnet",
+          "key": "Openstack_Driver_Subnet_Delete",
+          "description": "Use to delete a generic Openstack Subnet",
+          "category": "Subnets",
+          "inputParameters": [
+            {
+              "parameterName": "Subnet Identification",
+              "parameterKey": "openstack_subnet_id",
+              "parameterDescription": "The identifier of the Subnet to be deleted",
+              "parameterType": "string",
+              "inputDetails": {
+                "fromConstants": false
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Ports",
+          "key": "Openstack_Driver_Get_Ports",
+          "description": "Gets a list of available Openstack Ports",
+          "category": "Ports",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Port",
+          "key": "Openstack_Driver_Get_Port",
+          "description": "Gets the details of a specified Openstack Port",
+          "category": "Ports",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The ID of the Openstack Port to get detailed information on.",
+              "parameterType": "string",
+              "inputDetails": {}
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Port",
+          "key": "Openstack_Driver_Port",
+          "description": "Use to create an Openstack Network Port",
+          "category": "Ports",
+          "inputParameters": [
+            {
+              "parameterName": "Port Name",
+              "parameterKey": "openstack_port_name",
+              "parameterDescription": "The name of the Port",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Admin State",
+              "parameterKey": "openstack_port_admin_state_up",
+              "parameterDescription": "(Optional) The administrative state of the resource, which is up (true) or down (false). Default is true.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Port Description",
+              "parameterKey": "openstack_port_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Attached Device ID",
+              "parameterKey": "openstack_port_device_id",
+              "parameterDescription": "(Optional) The ID of the device that uses this port. For example, a server instance or a logical router.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Fixed IP Addresses",
+              "parameterKey": "openstack_port_fixed_ips",
+              "parameterDescription": "(Optional) A set of Fixed IP addresses to assign to this port.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "MAC Address",
+              "parameterKey": "openstack_port_mac_address",
+              "parameterDescription": "(Optional) The MAC address of the port. If unspecified, a MAC address is automatically generated.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_port_network_id",
+              "parameterDescription": "The ID of the network that this port should be attached to.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Enable Port Security",
+              "parameterKey": "openstack_port_security_enabled",
+              "parameterDescription": "(Optional) The port security status. A valid value is enabled (true) or disabled (false). If port security is enabled for the port, security group rules and anti-spoofing rules are applied to the traffic on the port. If disabled, no such rules are applied. If not set this value will default to the attached network\"s settings.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Security Groups",
+              "parameterKey": "openstack_port_security_groups",
+              "parameterDescription": "(Optional) The IDs of security groups applied to the port.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The identifier of the Port that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Port Name",
+              "parameterKey": "openstack_port_name",
+              "parameterDescription": "The name of the Port that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Port Addresses",
+              "parameterKey": "openstack_port_addresses",
+              "parameterDescription": "The address(es) of the Port that was created in Openstack. 0.0.0.0 will be returned as the only address if no assigned addresses are found.",
+              "parameterType": "stringList",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Modify Port",
+          "key": "Openstack_Driver_Modify_Port",
+          "description": "Use to update an Openstack Network Port",
+          "category": "Ports",
+          "inputParameters": [
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The ID of the port to modify",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Port Name",
+              "parameterKey": "openstack_port_name",
+              "parameterDescription": "The name of the Port",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Admin State",
+              "parameterKey": "openstack_port_admin_state_up",
+              "parameterDescription": "(Optional) The administrative state of the resource, which is up (true) or down (false). Default is true.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Port Description",
+              "parameterKey": "openstack_port_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Attached Device ID",
+              "parameterKey": "openstack_port_device_id",
+              "parameterDescription": "(Optional) The ID of the device that uses this port. For example, a server instance or a logical router.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Fixed IP Addresses",
+              "parameterKey": "openstack_port_fixed_ips",
+              "parameterDescription": "(Optional) A set of Fixed IP addresses to assign to this port.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "MAC Address",
+              "parameterKey": "openstack_port_mac_address",
+              "parameterDescription": "(Optional) The MAC address of the port. If unspecified, a MAC address is automatically generated.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Enable Port Security",
+              "parameterKey": "openstack_port_security_enabled",
+              "parameterDescription": "(Optional) The port security status. A valid value is enabled (true) or disabled (false). If port security is enabled for the port, security group rules and anti-spoofing rules are applied to the traffic on the port. If disabled, no such rules are applied. If not set this value will default to the attached network\"s settings.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "QOS Policy ID",
+              "parameterKey": "openstack_port_qos_policy_id",
+              "parameterDescription": "(Optional) QoS policy associated with the port.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Security Groups",
+              "parameterKey": "openstack_port_security_groups",
+              "parameterDescription": "(Optional) The IDs of security groups applied to the port.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Attach Port to VM",
+          "key": "Openstack_Driver_Attach_Port",
+          "description": "Use to attach a Port to a Device",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The ID of the port for which you want to create an interface. The net_id and port_id parameters are mutually exclusive. If you do not specify the port_id parameter, the OpenStack Networking API v2.0 allocates a port and creates an interface for it on the network.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Network ID",
+              "parameterKey": "openstack_network_id",
+              "parameterDescription": "The ID of the network for which you want to create a port interface. The net_id and port_id parameters are mutually exclusive. If you do not specify the net_id parameter, the OpenStack Networking API v2.0 uses the network information cache that is associated with the instance.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The UUID of the server to attach an interface to.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "port_id",
+              "parameterDescription": "The id of the port that was attached to the VM. This is useful when attaching a network directly.",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Port IP Address",
+              "parameterKey": "port_ip_address",
+              "parameterDescription": "The ip address of the port that was attached. This may be 0.0.0.0 in the case the port has no address.",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Detach Port from VM",
+          "key": "Openstack_Driver_Detach_Port",
+          "description": "Use to detach a Port from a VM",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The ID of the port which you want to detach from the VM.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The UUID of the server to detach the interface from.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Attach Port to Device",
+          "key": "Openstack_Driver_Attach_Port_To_Device",
+          "description": "Use to attach a Port to a Device",
+          "category": "Ports",
+          "inputParameters": [
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The ID of the port to modify",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Attached Device ID",
+              "parameterKey": "openstack_port_device_id",
+              "parameterDescription": "The ID of the device to attach this port to. For example, a server instance or a logical router.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Port",
+          "key": "Openstack_Driver_Port_Delete",
+          "description": "Use to delete an Openstack Network Port",
+          "category": "Ports",
+          "inputParameters": [
+            {
+              "parameterName": "Port ID",
+              "parameterKey": "openstack_port_id",
+              "parameterDescription": "The ID of the port to delete",
+              "parameterType": "string",
+              "inputDetails": {
+                "fromConstants": false
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Security Groups",
+          "key": "Openstack_Driver_Get_Security_Groups",
+          "description": "Gets a list of available Openstack Security Groups",
+          "category": "Security Groups",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Security Group",
+          "key": "Openstack_Driver_Get_Security_Group",
+          "description": "Gets the details of a specified Openstack Security Group",
+          "category": "Security Groups",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Security Group Identification",
+              "parameterKey": "openstack_security_group_id",
+              "parameterDescription": "The identifier of the Openstack Security Group to get detailed information on.",
+              "parameterType": "string",
+              "inputDetails": {}
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Security Group",
+          "key": "Openstack_Driver_Security_Group",
+          "description": "Use to create a generic Openstack Security Group",
+          "category": "Security Groups",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Security Group Name",
+              "parameterKey": "openstack_security_group_name",
+              "parameterDescription": "Human-readable name of the resource.",
+              "parameterType": "string",
+              "inputDetails": {}
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_security_group_description",
+              "parameterDescription": "(Optional) A human-readable description for the resource. Default is an empty string.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Security Group Identification",
+              "parameterKey": "openstack_security_group_id",
+              "parameterDescription": "The identifier of the Security Group that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Security Group Name",
+              "parameterKey": "openstack_security_group_name",
+              "parameterDescription": "The name of the Security Group that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Security Group",
+          "key": "Openstack_Driver_Security_Group_Delete",
+          "description": "Use to delete a generic Openstack Security Group",
+          "category": "Security Groups",
+          "inputParameters": [
+            {
+              "parameterName": "Security Group Identification",
+              "parameterKey": "openstack_security_group_id",
+              "parameterDescription": "The identifier of the Security Group to be deleted",
+              "parameterType": "string",
+              "inputDetails": {
+                "fromConstants": false
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Security Group Rules",
+          "key": "Openstack_Driver_Get_Security_Group_Rules",
+          "description": "Gets a list of available Openstack Security Group Rules",
+          "category": "Security Group Rules",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Security Group Rule",
+          "key": "Openstack_Driver_Get_Security_Group_Rule",
+          "description": "Gets the details of a specified Openstack Security Group Rule",
+          "category": "Security Group Rules",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Security Group Rule Identification",
+              "parameterKey": "openstack_security_group_rule_id",
+              "parameterDescription": "The identifier of the Openstack Security Group Rule to get detailed information on.",
+              "parameterType": "string",
+              "inputDetails": {}
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Security Group Rule",
+          "key": "Openstack_Driver_Security_Group_Rule",
+          "description": "Use to create a generic Openstack Subnet",
+          "category": "Security Group Rules",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Security Group Identification",
+              "parameterKey": "openstack_security_group_id",
+              "parameterDescription": "The identifier of the Security Group to which the rule belongs.",
+              "parameterType": "string",
+              "inputDetails": {}
+            },
+            {
+              "parameterName": "Rule Direction",
+              "parameterKey": "openstack_security_group_rule_direction",
+              "parameterType": "enumerated",
+              "parameterDescription": "The direction in which the Security Group Rule is applied.",
+              "inputDetails": {
+                "options": [
+                  "ingress",
+                  "egress"
+                ]
+              }
+            },
+            {
+              "parameterName": "Rule Ethertype",
+              "parameterKey": "openstack_security_group_rule_ether_type",
+              "parameterDescription": "Ethertype of network traffic based on IP protocol",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "IPv4",
+                  "IPv6"
+                ],
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Port Range Minimum",
+              "parameterKey": "openstack_security_group_rule_port_range_min",
+              "parameterDescription": "(Optional) The minimum port number in the range that is matched by the security group rule.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Port Range Maximum",
+              "parameterKey": "openstack_security_group_rule_port_range_max",
+              "parameterDescription": "(Optional) The maximum port number in the range that is matched by the security group rule.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "protocol",
+              "parameterKey": "openstack_security_group_rule_protocol",
+              "parameterDescription": "(Optional) The protocol for the Security Group Rule.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "tcp",
+                  "udp",
+                  "icmp"
+                ],
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Remote Group Identification",
+              "parameterKey": "openstack_security_group_rule_remote_group_id",
+              "parameterDescription": "(Optional) The remote group identifier to be associated with this Security Group Rule.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Remote IP Prefix",
+              "parameterKey": "openstack_security_group_rule_remote_ip_prefix",
+              "parameterDescription": "(Optional) The remote IP prefix to be associated with this Security Group rule.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Security Group Rule Identification",
+              "parameterKey": "openstack_security_group_rule_id",
+              "parameterDescription": "The identifier of the Security Group Rule that was created in Openstack",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Security Group Rule",
+          "key": "Openstack_Driver_Security_Group_Rule_Delete",
+          "description": "Use to delete a generic Openstack Security Group Rule",
+          "category": "Security Group Rules",
+          "inputParameters": [
+            {
+              "parameterName": "Security Group Rule Identification",
+              "parameterKey": "openstack_security_group_rule_id",
+              "parameterDescription": "The identifier of the Security Group Rule to be deleted",
+              "parameterType": "string",
+              "inputDetails": {
+                "fromConstants": false
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Network Trunks",
+          "key": "Openstack_Driver_Get_Network_Trunks",
+          "description": "Use to get a list of available Openstack network trunks.",
+          "category": "Network Trunking",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Network Trunk",
+          "key": "Openstack_Driver_Get_Network_Trunk",
+          "description": "Use to get a the details of an Openstack network trunk.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk ID",
+              "parameterKey": "openstack_network_trunk_id",
+              "parameterDescription": "The ID of the network trunk to get details of.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Network Trunk",
+          "key": "Openstack_Driver_Create_Network_Trunk",
+          "description": "Use to create an Openstack network trunk.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk Name",
+              "parameterKey": "openstack_trunk_name",
+              "parameterDescription": "The name to assign the Openstack Network Trunk.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_trunk_description",
+              "parameterDescription": "(Optional) A human readable description of the Openstack Network Trunk.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Project ID",
+              "parameterKey": "openstack_project_id",
+              "parameterDescription": "The ID of the project which will own the Openstack Network Trunk.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Parent Port ID",
+              "parameterKey": "openstack_trunk_port_id",
+              "parameterDescription": "The ID of the port to use as the Parent Port on the Openstack Network Trunk.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Admin State",
+              "parameterKey": "openstack_trunk_admin_state_up",
+              "parameterDescription": "The admin state of the Openstack Network Trunk (True = Up, False = Down).",
+              "parameterType": "boolean"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Trunk ID",
+              "parameterKey": "openstack_trunk_id",
+              "parameterDescription": "The ID of the newly created network trunk",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Trunk Name",
+              "parameterKey": "openstack_trunk_name",
+              "parameterDescription": "The name of the newly created network trunk",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Network Trunk",
+          "key": "Openstack_Driver_Update_Network_Trunk",
+          "description": "Use to update an existing Openstack network trunk.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk ID",
+              "parameterKey": "openstack_trunk_id",
+              "parameterDescription": "The ID of the Openstack Network Trunk to update.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Network Trunk Name",
+              "parameterKey": "openstack_trunk_name",
+              "parameterDescription": "The name to assign the Openstack Network Trunk.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_trunk_description",
+              "parameterDescription": "(Optional) A human readable description of the Openstack Network Trunk.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Admin State",
+              "parameterKey": "openstack_trunk_admin_state_up",
+              "parameterDescription": "The admin state of the Openstack Network Trunk (True = Up, False = Down).",
+              "parameterType": "boolean"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Add Sub Port to Network Trunk",
+          "key": "Openstack_Driver_Update_Network_Trunk_Add_Subport",
+          "description": "Use to update an existing Openstack network trunk with an additional sub port.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk ID",
+              "parameterKey": "openstack_trunk_id",
+              "parameterDescription": "The ID of the Openstack Network Trunk to update.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Sub Port To Add",
+              "parameterKey": "openstack_trunk_sub_port_id",
+              "parameterDescription": "The ID of the Port to add as a sub port to this network trunk.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Segmentation Type",
+              "parameterKey": "openstack_trunk_sub_port_segmentation_type",
+              "parameterDescription": "The Segmentation Type to use for the port.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "inherit",
+                  "vlan"
+                ]
+              },
+              "enumeratedValue": "inherit"
+            },
+            {
+              "parameterName": "Segmentation ID",
+              "parameterKey": "openstack_trunk_sub_port_segmentation_id",
+              "parameterDescription": "The segmentation ID to use for this port.",
+              "parameterType": "number"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Remove Sub Ports from Network Trunk",
+          "key": "Openstack_Driver_Update_Network_Trunk_Remove_Subports",
+          "description": "Use to update an existing Openstack network trunk and remove a set of sub ports.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk ID",
+              "parameterKey": "openstack_trunk_id",
+              "parameterDescription": "The ID of the Openstack Network Trunk to update.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Sub Ports To Remove",
+              "parameterKey": "openstack_trunk_sub_ports",
+              "parameterDescription": "A list of the Port IDs to remove as sub ports from this network trunk.",
+              "parameterType": "stringList"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Sub Ports on Network Trunk",
+          "key": "Openstack_Driver_Network_Trunk_Get_Subports",
+          "description": "Use to retrieve the list of sub ports attached to an Openstack network trunk.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk ID",
+              "parameterKey": "openstack_trunk_id",
+              "parameterDescription": "The ID of the Openstack Network Trunk to query for subports.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Network Trunk",
+          "key": "Openstack_Driver_Delete_Network_Trunk",
+          "description": "Use to retrieve the list of sub ports attached to an Openstack network trunk.",
+          "category": "Network Trunking",
+          "inputParameters": [
+            {
+              "parameterName": "Network Trunk ID",
+              "parameterKey": "openstack_trunk_id",
+              "parameterDescription": "The ID of the Openstack Network Trunk to query for subports.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Virtual Machines",
+          "description": "Use to get a list of Openstack Virtual Machines",
+          "key": "Openstack_Driver_Get_Virtual_Machines",
+          "category": "Compute",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Virtual Machine",
+          "description": "Use to get the details of a specific Opesntack Virtual Machine.",
+          "key": "Openstack_Driver_Get_Virtual_Machine",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Openstack Virtual Machine ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the virtual machine you wish to query for details about.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Virtual Machine",
+          "description": "Use to create an Opesntack Virtual Machine.",
+          "key": "Openstack_Driver_VM",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_vm_name",
+              "parameterDescription": "The name to assign the Openstack Virtual Machine.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "SSH Key",
+              "parameterKey": "openstack_ssh_key",
+              "parameterDescription": "The name of the Openstack SSH Key to inject into the VM. Note: This key must be installed on the openstack cluster.",
+              "parameterType": "string",
+              "inputDetails": {
+                "fromConstants": true,
+                "constantsPath": "openstack/sshKey"
+              }
+            },
+            {
+              "parameterName": "Network IDs",
+              "parameterKey": "openstack_network_identifiers",
+              "parameterDescription": "(Optional) A list of the IDs for networks that should be bound to this Openstack VM Instance.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Port IDs",
+              "parameterKey": "openstack_port_identifiers",
+              "parameterDescription": "(Optional) A list of the IDs for ports that should be bound to this Openstack VM Instance.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Management Network ID",
+              "parameterKey": "openstack_vm_management_network",
+              "parameterDescription": "The ID of the port or network that should be bound to this Openstack VM Instance and used as the management connection.",
+              "parameterType": "string",
+              "inputDetails": {
+                "fromConstants": true,
+                "constantsPath": "openstack/vmManagementNetwork"
+              }
+            },
+            {
+              "parameterName": "Management Network Type",
+              "parameterKey": "openstack_vm_management_network_type",
+              "parameterDescription": "The type of ID that was passed as the Management Network ID",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "network",
+                  "port"
+                ]
+              }
+            },
+            {
+              "parameterName": "Use Floating IP Address For Management Network",
+              "parameterKey": "openstack_use_floating_ip_addresses",
+              "parameterDescription": "Boolean indicating whether a Floating IP address should be reserved for and applied to the management network for the Openstack VM Instance.",
+              "parameterType": "boolean"
+            },
+            {
+              "parameterName": "Floating IP Address Pool",
+              "parameterKey": "openstack_floating_ip_pool",
+              "parameterDescription": "(Optional - Required if using floating IPs) The Floating IP Address Pool to use when reserving Floating IP Addresses.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Openstack VM Flavor",
+              "parameterKey": "openstack_flavor",
+              "parameterDescription": "The flavor to use when creating the Openstack VM Instance.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Openstack VM Image",
+              "parameterKey": "openstack_image",
+              "parameterDescription": "The image to use when creating the Openstack VM Instance.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "User Data",
+              "parameterKey": "openstack_user_data",
+              "parameterDescription": "(optional) Configuration information or scripts to use upon launch. Restricted to 65535 bytes.",
+              "parameterType": "encodedString",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build Near Host IP",
+              "parameterKey": "openstack_build_near_host_ip",
+              "parameterDescription": "(Optional) Schedule the server on a host in the network specified with this parameter and a cidr (os:scheduler_hints.cidr). It is available when SimpleCIDRAffinityFilter is available on cloud side.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build Near Host CIDR",
+              "parameterKey": "openstack_build_near_host_cidr",
+              "parameterDescription": "(Optional) Schedule the server on a host in the network specified with an IP address (os:scheduler_hints:build_near_host_ip) and this parameter. If os:scheduler_hints:build_near_host_ip is specified and this parameter is omitted, /24 is used. It is available when SimpleCIDRAffinityFilter is available on cloud side.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build In Different Cell",
+              "parameterKey": "openstack_build_in_different_cell",
+              "parameterDescription": "(Optional) A list of cell routes or a cell route (string). Schedule the server in a cell that is not specified. It is available when DifferentCellFilter is available on cloud side that is cell v1 environment.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build On Different Host",
+              "parameterKey": "openstack_build_on_different_host",
+              "parameterDescription": "(Optional) A list of server UUIDs or a server UUID. Schedule the server on a different host from a set of servers. It is available when DifferentHostFilter is available on cloud side.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build based on Group Rules",
+              "parameterKey": "openstack_build_using_server_group",
+              "parameterDescription": "(Optional) The server group UUID. Schedule the server according to a policy of the server group (anti-affinity, affinity, soft-anti-affinity or soft-affinity). It is available when ServerGroupAffinityFilter, ServerGroupAntiAffinityFilter, ServerGroupSoftAntiAffinityWeigher, ServerGroupSoftAffinityWeigher are available on cloud side.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build based on Query",
+              "parameterKey": "openstack_build_using_query",
+              "parameterDescription": "(Optional) Schedule the server by using a custom filter in JSON format. For example:\n\n\"query\": \"[\\\">=\\\",\\\"$free_ram_mb\\\",1024]\"\nIt is available when JsonFilter is available on cloud side.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build on the Same Host",
+              "parameterKey": "openstack_build_on_same_host",
+              "parameterDescription": "(Optional) A list of server UUIDs or a server UUID. Schedule the server on the same host as another server in a set of servers. It is available when SameHostFilter is available on cloud side.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Build in Specified Cell",
+              "parameterKey": "openstack_build_in_cell",
+              "parameterDescription": "(Optional) A target cell name. Schedule the server in a host in the cell specified. It is available when TargetCellFilter is available on cloud side that is cell v1 environment.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Block Device Mapping Boot Index",
+              "parameterKey": "openstack_bdm_boot_index",
+              "parameterDescription": "(Optional) Defines the order in which a hypervisor tries devices when it attempts to boot the guest from storage. Give each device a unique boot index starting from 0. To disable a device from booting, set the boot index to a negative value or use the default boot index value, which is None. The simplest usage is, set the boot index of the boot device to 0 and use the default boot index value, None, for any other devices. Some hypervisors might not support booting from multiple devices; these hypervisors consider only the device with a boot index of 0. Some hypervisors support booting from multiple devices but only if the devices are of different types. For example, a disk and CD-ROM.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Block Device Mapping Delete on Termination",
+              "parameterKey": "openstack_bdm_delete_on_termination",
+              "parameterDescription": "(Optional) To delete the boot volume when the server is destroyed, specify true. Otherwise, specify false. Default: false",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Block Device Mapping Source Type",
+              "parameterKey": "openstack_bdm_source_type",
+              "parameterDescription": "(Optional) The source type of the block device. Valid values are:\n\nblank: Depending on the destination_type and guest_format, this will either be a blank persistent volume or an ephemeral (or swap) disk local to the compute host on which the server resides\nimage: This is only valid with destination_type=volume; creates an image-backed volume in the block storage service and attaches it to the server\nsnapshot: This is only valid with destination_type=volume; creates a volume backed by the given volume snapshot referenced via the block_device_mapping_v2.uuid parameter and attaches it to the server\nvolume: This is only valid with destination_type=volume; uses the existing persistent volume referenced via the block_device_mapping_v2.uuid parameter and attaches it to the server\nThis parameter is required unless block_device_mapping_v2.no_device is specified.\n\nSee Block Device Mapping in Nova for more details on valid source and destination types.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "blank",
+                  "image",
+                  "snapshot",
+                  "volume"
+                ]
+              }
+            },
+            {
+              "parameterName": "Block Device Mapping Destination Type",
+              "parameterKey": "openstack_bdm_destination_type",
+              "parameterDescription": "(Optional) Defines where the block device mapping will reside. Valid values are:\n\nlocal: The ephemeral disk resides local to the compute host on which the server runs\nvolume: The persistent volume is stored in the block storage service",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "local",
+                  "volume"
+                ]
+              }
+            },
+            {
+              "parameterName": "Block Device Mapping Device Name",
+              "parameterKey": "openstack_bdm_device_name",
+              "parameterDescription": "(Optional) A path to the device for the volume that you want to use to boot the server. Note that as of the 12.0.0 Liberty release, the Nova libvirt driver no longer honors a user-supplied device name. This is the same behavior as if the device name parameter is not supplied on the request.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Block Device Mapping Device Type",
+              "parameterKey": "openstack_bdm_device_type",
+              "parameterDescription": "(Optional) The device type. For example, disk, cdrom.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Block Device Disc Bus",
+              "parameterKey": "openstack_bdm_disc_bus",
+              "parameterDescription": "(Optional) Disk bus type, some hypervisors (currently only libvirt) support specify this parameter. Some example disk_bus values can be: ide, usb, virtio, scsi. This is not an exhaustive list as it depends on the virtualization driver, and may change as more support is added.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "ide",
+                  "usb",
+                  "virtio",
+                  "scsi"
+                ]
+              }
+            },
+            {
+              "parameterName": "Block Device Guest Format",
+              "parameterKey": "openstack_bdm_guest_format",
+              "parameterDescription": "(Optional) Specifies the guest server disk file system format, such as ext2, ext3, ext4, xfs or swap.\n\nSwap block device mappings have the following restrictions:\n\nThe source_type must be blank\nThe destination_type must be local\nThere can only be one swap disk per server\nThe size of the swap disk must be less than or equal to the swap size of the flavor",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "ext2",
+                  "ext3",
+                  "ext4",
+                  "xfs",
+                  "swap"
+                ]
+              }
+            },
+            {
+              "parameterName": "Block Device UUID",
+              "parameterKey": "openstack_bdm_uuid",
+              "parameterDescription": "(Optional) This is the uuid of source resource. The uuid points to different resources based on the source_type. For example, if source_type is image, the block device is created based on the specified image which is retrieved from the image service. Similarly, if source_type is snapshot then the uuid refers to a volume snapshot in the block storage service. If source_type is volume then the uuid refers to a volume in the block storage service.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Block Device Volume Size",
+              "parameterKey": "openstack_bdm_volume_size",
+              "parameterDescription": "(Optional) The size of the volume (in GiB). This is integer value from range 1 to 2147483647 which can be requested as integer and string. This parameter must be specified in the following cases:\n\nAn image to volume case\nblock_device_mapping_v2.source_type is image\nblock_device_mapping_v2.destination_type is volume\nA blank to volume case\nblock_device_mapping_v2.source_type is blank\nblock_device_mapping_v2.destination_type is volume",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Openstack Virtual Machine ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the virtual machine which was created.",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Management IP Address",
+              "parameterKey": "targetAddress",
+              "parameterDescription": "The ID of the virtual machine which was created.",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Virtual Machine",
+          "description": "Use to delete an Openstack Virtual Machine.",
+          "key": "Openstack_Driver_VM_Delete",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to delete.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Reboot Virtual Machine",
+          "description": "Use to reboot an Openstack Virtual Machine.",
+          "key": "Openstack_Driver_VM_Action",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to delete.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "VM Action",
+              "parameterKey": "openstack_vm_action",
+              "parameterDescription": "The type of action to take when rebooting the Openstack VM Instance.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "soft-reboot",
+                  "hard-reboot"
+                ]
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Attach Volume to Virtual Machine",
+          "description": "Use to attach an Openstack Volume to an Openstack Virtual Machine.",
+          "key": "Openstack_Driver_Attach_Volume_To_Virtual_Machine",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to attach the volume to.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Volume ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The ID of the volume to attach the to the Virtaul Machine Instance.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Detach Volume from Virtual Machine",
+          "description": "Use to detach an Openstack Volume from an Openstack Virtual Machine.",
+          "key": "Openstack_Driver_Detach_Volume_From_Virtual_Machine",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to detach the volume from.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Volume ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The ID of the volume to detach from the Virtaul Machine Instance.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Volumes",
+          "description": "Use to get a listing of the available Openstack Volumes.",
+          "key": "Openstack_Driver_Get_Volumes",
+          "category": "Block Storage",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Volume",
+          "description": "Use to get the details of a specific Openstack Volume.",
+          "key": "Openstack_Driver_Get_Volume",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "Volume ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The ID of the volume to query for details about.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Volume",
+          "description": "Use to create an Openstack Volume.",
+          "key": "Openstack_Driver_Create_Volume",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_volume_name",
+              "parameterDescription": "The name to assign the new Openstack Volume.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_volume_description",
+              "parameterDescription": "(Optional) A human consumable description of the Openstack Volume.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Volume Size",
+              "parameterKey": "openstack_volume_size",
+              "parameterDescription": "The size in Gigabytes (GiB) of the volume to create.",
+              "parameterType": "number"
+            },
+            {
+              "parameterName": "Snapshot ID",
+              "parameterKey": "openstack_volume_snapshot_id",
+              "parameterDescription": "(Optional) The ID of a snapshot to create a volume out of.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Volume ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The ID of the newly created Openstack Volume",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Volume",
+          "description": "Use to update an Openstack Volume.",
+          "key": "Openstack_Driver_Update_Volume",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The id of the Openstack Volume to update.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_volume_name",
+              "parameterDescription": "(Optional) The new name to assign the Openstack Volume.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_volume_description",
+              "parameterDescription": "(Optional) A new human consumable description to assign the Openstack Volume.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Volume",
+          "description": "Use to destroy an Openstack Volume.",
+          "key": "Openstack_Driver_Delete_Volume",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The id of the Openstack Volume to delete.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Snapshots",
+          "description": "Use to get a listing of the available Openstack Snapshots.",
+          "key": "Openstack_Driver_Get_Snapshots",
+          "category": "Block Storage",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Snapshot",
+          "description": "Use to get the details of a specific Openstack Snapshot.",
+          "key": "Openstack_Driver_Get_Snapshot",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "Snapshot ID",
+              "parameterKey": "openstack_snapshot_id",
+              "parameterDescription": "The ID of the snapshot to query for details about.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Snapshot",
+          "description": "Use to create an Openstack Snapshot.",
+          "key": "Openstack_Driver_Create_Snapshot",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_snapshot_name",
+              "parameterDescription": "The name to assign the new Openstack Snapshot.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Description",
+              "parameterKey": "openstack_snapshot_description",
+              "parameterDescription": "(Optional) A human consumable description of the Openstack Snapshot.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Volume ID",
+              "parameterKey": "openstack_volume_id",
+              "parameterDescription": "The ID of the volume to take a snapshot of.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Project ID",
+              "parameterKey": "openstack_project_id",
+              "parameterDescription": "The ID of the project that will own the snapshot.",
+              "parameterType": "string"
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Force",
+              "parameterKey": "openstack_snapshot_force",
+              "parameterDescription": "(Optional) Indicates whether to create the snapshot, even if the volume is attached. Default is false.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Snapshot ID",
+              "parameterKey": "openstack_snapshot_id",
+              "parameterDescription": "The ID of the newly created Openstack Snapshot",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Snapshot",
+          "description": "Use to destroy an Openstack Snapshot.",
+          "key": "Openstack_Driver_Delete_Snapshot",
+          "category": "Block Storage",
+          "inputParameters": [
+            {
+              "parameterName": "ID",
+              "parameterKey": "openstack_snapshot_id",
+              "parameterDescription": "The id of the Openstack Snapshot to delete.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        }
+      ],
+      "exportable": true
+    }
+  }
+}

@@ -1,0 +1,121 @@
+<!--
+  Copyright JS Foundation and other contributors, http://js.foundation
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<script type='text/javascript' src='/nodes/lib/ui/NodeConfig.js'/>
+
+<script type='text/x-red' data-template-name='vino-driver-ansible'>
+    <br/>
+    <div class='form-row'>
+        <label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
+        <input type='text' id='node-input-name' placeholder='Name'>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <label for='node-input-description'><i class='fa fa-tags'></i> Description</label>
+        <textarea id='node-input-description' placeholder=''></textarea>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <label for='baseType-select' id='baseType-select-label'><i class='fa fa-tag'></i> Ansible Action</label>
+        <select id='baseType-select'>
+        </select>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <label for='node-input-outputProcessingType' id='outputProcessing-select-label'><i class='fa fa-tag'></i> Ansible Output to Process for Output Parameters</label>
+        <select id='node-input-outputProcessingType'>
+            <option value="full">Full Ansible Output</option>
+            <option value="stdout">Standard Out</option>
+            <option value="stderr">Standard Error</option>
+        </select>
+    </div>
+
+    <br/>
+    <div class='form-row'>
+        <button type="button" id='statusOptions-button'>Status Message Options</button>
+    </div>
+
+    <div class='form-row loading-div' style='display: block;'>
+        <label>Loading....</label>
+    </div>
+
+    <div class='form-row' style='display: none;'>
+        <label for='node-input-lastModified'><i class='fa fa-tags'></i> Last Modified</label>
+        <input type='text' id='node-input-lastModified'>
+    </div>
+
+    <div id='baseTypes'>
+    </div>
+</script>
+
+<!-- Help text for the node can be provided here                             -->
+<script type='text/x-red' data-help-name='vino-driver-ansible'>
+   <p>ViNO Driver node used to perform Ansible operations.</p>
+   <p>Uses Mustache templating for inserting parameters into the playbook.</p>
+   <p></p>
+   <p>Mustache source and documentation: https://github.com/janl/mustache.js/</p>
+</script>
+
+<script type='text/javascript'>
+   RED.nodes.registerType('vino-driver-ansible',
+      {
+         category: 'ViNO',
+         defaults:
+            {
+               name: {value:'Ansible'},
+               description: {value:''},
+               baseTypes: {value:[]},
+               outputProcessingType: {value: 'full'},
+               selectedBaseType: {value:''},
+               statusConfiguration: {value:{}},
+               lastModified: {value:''},
+               isDeactivationNode: {value: false}
+            },
+         inputs:1,
+         outputs:1,
+         icon: 'myicon.png',
+         label: function()
+         {
+            return this.name||this.url||'vino-driver-ansible';
+         },
+         labelStyle: function()
+         {
+            return this.name?'node_label_italic':'';
+         },
+         color: '#F3B567',
+         oneditprepare: function()
+         {
+            node = this;
+            jQuery(".editor-tray").width(900);
+            ctl.ui.renderUI(node, RED.settings.vinoDriverAnsibleCommands, RED.settings.vinoDriverAnsibleCommonParameters);
+         },
+         oneditsave: function()
+         {
+            node = this;
+            jQuery('#node-input-lastModified').val(Date.now());
+            ctl.ui.save(node);
+            ctl.ui.close(node);
+         },
+         oneditcancel: function()
+         {
+            node = this;
+            ctl.ui.close(node);
+         }
+      });
+</script>

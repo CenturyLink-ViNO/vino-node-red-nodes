@@ -1,0 +1,15 @@
+├─ MIT: 155
+├─ ISC: 38
+├─ Apache-2.0: 20
+├─ MIT*: 12
+├─ BSD-3-Clause: 8
+├─ BSD: 6
+├─ BSD-2-Clause: 5
+├─ BSD*: 3
+├─ Apache*: 1
+├─ Apache 2.0: 1
+├─ AFLv2.1,BSD: 1
+├─ Custom: http://nodejs.org/: 1
+├─ (BSD-2-Clause OR MIT OR Apache-2.0): 1
+├─ Unlicense: 1
+└─ LGPL or MIT: 1
