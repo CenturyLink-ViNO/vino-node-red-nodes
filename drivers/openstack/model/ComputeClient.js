@@ -1,7 +1,9 @@
 /* eslint camelcase: 0 */
 /* eslint max-lines: ["off"] */
+/* eslint no-await-in-loop: ["off"] */
 
 const pkgcloud = require('../../../lib/openstack/vendor/pkgcloud/lib/pkgcloud');
+const identity = require('../../../lib/openstack/vendor/pkgcloud/lib/pkgcloud/openstack/identity');
 const NodeUtilities = require('../../../lib/driver-utils/index');
 const utils = NodeUtilities.Utils;
 const Parameter = require('../../../lib/driver-utils/parameter');
@@ -41,6 +43,37 @@ module.exports = class OpenstackComputeClient
          });
       }
       return this.client;
+   }
+
+   getIdentityClient()
+   {
+      if (!this.identityClient)
+      {
+         const provider = 'openstack';
+         const username = this.getParameterValue('openstack_username');
+         const password = this.getParameterValue('openstack_password');
+         const domainName = this.getParameterValue('openstack_domain_name');
+         const tenantId = this.getParameterValue('openstack_tenant_id');
+         const tenantName = this.getParameterValue('openstack_tenant_name');
+         const keystoneAuthVersion = this.getParameterValue('openstack_api_version');
+         const authUrl = this.getParameterValue('openstack_auth_url');
+         const region = this.getParameterValue('openstack_region_name');
+         const strictSSL = !this.getParameterValue('openstack_allow_insecure_connections');
+         this.identityClient = identity.createClient({
+            provider: provider,
+            username: username,
+            password: password,
+            domainName: domainName,
+            tenantId: tenantId,
+            tenantName: tenantName,
+            keystoneAuthVersion: keystoneAuthVersion,
+            version: keystoneAuthVersion,
+            authUrl: authUrl,
+            region: region,
+            strictSSL: strictSSL
+         });
+      }
+      return this.identityClient;
    }
 
    static generateErrorMessage(err)
@@ -166,28 +199,14 @@ module.exports = class OpenstackComputeClient
          {
             if (nets.hasOwnProperty(iter))
             {
-               if (mgmtNet === nets[iter])
-               {
-                  ret.unshift({ uuid: nets[iter] });
-               }
-               else
-               {
-                  ret.push({ uuid: nets[iter] });
-               }
+               ret.push({ uuid: nets[iter] });
             }
          }
          for (const iter in thePorts)
          {
             if (thePorts.hasOwnProperty(iter))
             {
-               if (mgmtNet === thePorts[iter])
-               {
-                  ret.unshift({ port: thePorts[iter] });
-               }
-               else
-               {
-                  ret.push({ port: thePorts[iter] });
-               }
+               ret.push({ port: thePorts[iter] });
             }
          }
          if (managementNetType === 'network' && Array.isArray(nets) && !nets.includes(mgmtNet))
@@ -201,6 +220,11 @@ module.exports = class OpenstackComputeClient
          return ret;
       };
       const networkObject = processNetworks(networks, ports, managementNet);
+      const firstNetwork = [];
+      if (networkObject.length > 0)
+      {
+         firstNetwork.push(networkObject.shift());
+      }
       const processFlavor = async function(theFlavor)
       {
          let ret = null;
@@ -413,7 +437,7 @@ module.exports = class OpenstackComputeClient
          name: name,
          flavor: flavor,
          image: image,
-         networks: networkObject,
+         networks: firstNetwork,
          keyname: sshKey,
          schedulerHints: schedulerHints,
          cloudConfig: cloudConfig,
@@ -460,6 +484,14 @@ module.exports = class OpenstackComputeClient
       if (server && server.id)
       {
          server = await this.waitForBoot(server.id);
+         if (networkObject.length > 0)
+         {
+            for (const network of networkObject)
+            {
+               await outer.attachInterface(server.id, network.port, network.uuid);
+            }
+            await outer.rebootServer();
+         }
       }
       return server;
    }
@@ -831,13 +863,13 @@ module.exports = class OpenstackComputeClient
       return retryPromise;
    }
 
-   attachInterface()
+   attachInterface(theVmId, thePortId, theNetworkId)
    {
       const outer = this;
 
-      const vmId = this.getParameterValue('openstack_vm_id');
-      const portId = this.getParameterValue('openstack_port_id');
-      const networkId = this.getParameterValue('openstack_network_id');
+      const vmId = theVmId || this.getParameterValue('openstack_vm_id');
+      const portId = thePortId || this.getParameterValue('openstack_port_id');
+      const networkId = theNetworkId || this.getParameterValue('openstack_network_id');
 
       const retry = utils.getFaultTolerantOperation(this.inputParameters);
       const retryPromise = new Promise((resolve, reject) =>
@@ -953,7 +985,14 @@ module.exports = class OpenstackComputeClient
       }
       const managementInterfaceType = this.getParameterValue('openstack_vm_management_network_type');
       const managementId = this.getParameterValue('openstack_vm_management_network');
-
+      if (managementInterfaceType.toLowerCase() === 'none')
+      {
+         return {
+            fixed_ips: [
+               { ip_address: '0.0.0.0' }
+            ]
+         };
+      }
       const retry = utils.getFaultTolerantOperation(this.inputParameters);
       const retryPromise = new Promise((resolve, reject) =>
       {
@@ -1009,6 +1048,271 @@ module.exports = class OpenstackComputeClient
             }
             retry.stop();
             reject(new Error('Timed out while attempting to get the management interface for the VM.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   getKeypairs()
+   {
+      const outer = this;
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().listKeys((err, keypairs) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting the list of Keypairs: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(keypairs);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get the list of Openstack Keypairs.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get the list of Openstack Keypairs.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   async createKeypair()
+   {
+      const outer = this;
+
+      const name = this.getParameterValue('openstack_keypair_name');
+      const publicKey = this.getParameterValue('openstack_public_key');
+
+      const keypairObject = {};
+      keypairObject.name = name;
+      if (publicKey && publicKey !== '')
+      {
+         keypairObject.key = publicKey;
+      }
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().addKey(keypairObject, (err, keypair) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While creating a keypair: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(keypair);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to create an Openstack Keypair.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to create an Openstack Keypair.'));
+         }));
+      });
+      let keypair = null;
+      keypair = await retryPromise;
+      return keypair;
+   }
+
+   destroyKeypair()
+   {
+      const outer = this;
+
+      const name = this.getParameterValue('openstack_keypair_name');
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().destroyKey(name, (err, keypair) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While destroying a Keypair: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(keypair);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to destroy an Openstack Keypair.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to destroy an Openstack Keypair.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   getKeypair()
+   {
+      const outer = this;
+
+      const name = this.getParameterValue('openstack_keypair_name');
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().getKey(name, (err, keypair) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting details on a keypair: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(keypair);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get the details of an Openstack Keypair.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get the details of an Openstack Keypair.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   getProjects()
+   {
+      const outer = this;
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getIdentityClient().getProjects(outer.getIdentityClient().version, (err, projects) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting the list of Projects: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(projects);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get the list of Openstack Projects.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get the list of Openstack Projects.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   getProject()
+   {
+      const outer = this;
+
+      const name = this.getParameterValue('openstack_project_name');
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getIdentityClient().getProject(outer.getIdentityClient().version, name, (err, project) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting details on a project: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(project);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get the details of an Openstack Project.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get the details of an Openstack Project.'));
          }));
       });
       return retryPromise;

@@ -152,6 +152,7 @@
           "name": "Get Networks",
           "key": "Openstack_Driver_Get_Networks",
           "description": "Use to get a list of available Openstack networks.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Networks",
           "inputParameters": [],
           "outputParameters": [
@@ -171,6 +172,7 @@
           "name": "Get Network",
           "key": "Openstack_Driver_Get_Network",
           "description": "Use to get the details of a specific network given a Network ID",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Networks",
           "inputParameters": [
             {
@@ -199,6 +201,7 @@
           "key": "Openstack_Driver_Network",
           "category": "Networks",
           "description": "Use to create an Openstack Network",
+          "allowedExtractionMethods": ["CUSTOM"],
           "inputParameters": [
             {
               "parameterName": "Network Name",
@@ -372,6 +375,7 @@
           "name": "Modify Network",
           "key": "Openstack_Driver_Network_Modify",
           "description": "Use to modify an Openstack Network",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Networks",
           "inputParameters": [
             {
@@ -531,6 +535,7 @@
           "name": "Delete Network",
           "key": "Openstack_Driver_Network_Delete",
           "description": "Use to delete an Openstack Network",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Networks",
           "inputParameters": [
             {
@@ -558,6 +563,7 @@
           "name": "Get Subnets",
           "key": "Openstack_Driver_Get_Subnets",
           "description": "Gets a list of available Openstack Subnets",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Subnets",
           "inputParameters": [],
           "outputParameters": [
@@ -577,6 +583,7 @@
           "name": "Get Subnet",
           "key": "Openstack_Driver_Get_Subnet",
           "description": "Gets the details of a specified Openstack Subnet",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Subnets",
           "inputParameters": [
             {
@@ -604,6 +611,7 @@
           "name": "Create Subnet",
           "key": "Openstack_Driver_Subnet",
           "description": "Use to create a generic Openstack Subnet",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Subnets",
           "inputParameters": [
             {
@@ -758,6 +766,7 @@
           "name": "Modify Subnet",
           "key": "Openstack_Driver_Modify_Subnet",
           "description": "Use to create a generic Openstack Subnet",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Subnets",
           "inputParameters": [
             {
@@ -849,6 +858,7 @@
           "name": "Delete Subnet",
           "key": "Openstack_Driver_Subnet_Delete",
           "description": "Use to delete a generic Openstack Subnet",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Subnets",
           "inputParameters": [
             {
@@ -878,6 +888,7 @@
           "name": "Get Ports",
           "key": "Openstack_Driver_Get_Ports",
           "description": "Gets a list of available Openstack Ports",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Ports",
           "inputParameters": [],
           "outputParameters": [
@@ -897,6 +908,7 @@
           "name": "Get Port",
           "key": "Openstack_Driver_Get_Port",
           "description": "Gets the details of a specified Openstack Port",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Ports",
           "inputParameters": [
             {
@@ -924,6 +936,7 @@
           "name": "Create Port",
           "key": "Openstack_Driver_Port",
           "description": "Use to create an Openstack Network Port",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Ports",
           "inputParameters": [
             {
@@ -1052,6 +1065,7 @@
           "name": "Modify Port",
           "key": "Openstack_Driver_Modify_Port",
           "description": "Use to update an Openstack Network Port",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Ports",
           "inputParameters": [
             {
@@ -1159,6 +1173,7 @@
           "name": "Attach Port to VM",
           "key": "Openstack_Driver_Attach_Port",
           "description": "Use to attach a Port to a Device",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Compute",
           "inputParameters": [
             {
@@ -1223,6 +1238,7 @@
           "name": "Detach Port from VM",
           "key": "Openstack_Driver_Detach_Port",
           "description": "Use to detach a Port from a VM",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Compute",
           "inputParameters": [
             {
@@ -1255,6 +1271,7 @@
           "name": "Attach Port to Device",
           "key": "Openstack_Driver_Attach_Port_To_Device",
           "description": "Use to attach a Port to a Device",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Ports",
           "inputParameters": [
             {
@@ -1287,6 +1304,7 @@
           "name": "Delete Port",
           "key": "Openstack_Driver_Port_Delete",
           "description": "Use to delete an Openstack Network Port",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Ports",
           "inputParameters": [
             {
@@ -1316,6 +1334,7 @@
           "name": "Get Security Groups",
           "key": "Openstack_Driver_Get_Security_Groups",
           "description": "Gets a list of available Openstack Security Groups",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Groups",
           "inputParameters": [],
           "outputParameters": [
@@ -1335,6 +1354,7 @@
           "name": "Get Security Group",
           "key": "Openstack_Driver_Get_Security_Group",
           "description": "Gets the details of a specified Openstack Security Group",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Groups",
           "inputParameters": [
             {
@@ -1362,6 +1382,7 @@
           "name": "Create Security Group",
           "key": "Openstack_Driver_Security_Group",
           "description": "Use to create a generic Openstack Security Group",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Groups",
           "inputParameters": [
             {
@@ -1418,6 +1439,7 @@
           "name": "Delete Security Group",
           "key": "Openstack_Driver_Security_Group_Delete",
           "description": "Use to delete a generic Openstack Security Group",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Groups",
           "inputParameters": [
             {
@@ -1447,6 +1469,7 @@
           "name": "Get Security Group Rules",
           "key": "Openstack_Driver_Get_Security_Group_Rules",
           "description": "Gets a list of available Openstack Security Group Rules",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Group Rules",
           "inputParameters": [],
           "outputParameters": [
@@ -1466,6 +1489,7 @@
           "name": "Get Security Group Rule",
           "key": "Openstack_Driver_Get_Security_Group_Rule",
           "description": "Gets the details of a specified Openstack Security Group Rule",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Group Rules",
           "inputParameters": [
             {
@@ -1493,6 +1517,7 @@
           "name": "Create Security Group Rule",
           "key": "Openstack_Driver_Security_Group_Rule",
           "description": "Use to create a generic Openstack Subnet",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Group Rules",
           "inputParameters": [
             {
@@ -1605,6 +1630,7 @@
           "name": "Delete Security Group Rule",
           "key": "Openstack_Driver_Security_Group_Rule_Delete",
           "description": "Use to delete a generic Openstack Security Group Rule",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Security Group Rules",
           "inputParameters": [
             {
@@ -1634,6 +1660,7 @@
           "name": "Get Network Trunks",
           "key": "Openstack_Driver_Get_Network_Trunks",
           "description": "Use to get a list of available Openstack network trunks.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [],
           "outputParameters": [
@@ -1653,6 +1680,7 @@
           "name": "Get Network Trunk",
           "key": "Openstack_Driver_Get_Network_Trunk",
           "description": "Use to get a the details of an Openstack network trunk.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1679,6 +1707,7 @@
           "name": "Create Network Trunk",
           "key": "Openstack_Driver_Create_Network_Trunk",
           "description": "Use to create an Openstack network trunk.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1752,6 +1781,7 @@
           "name": "Update Network Trunk",
           "key": "Openstack_Driver_Update_Network_Trunk",
           "description": "Use to update an existing Openstack network trunk.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1799,6 +1829,7 @@
           "name": "Add Sub Port to Network Trunk",
           "key": "Openstack_Driver_Update_Network_Trunk_Add_Subport",
           "description": "Use to update an existing Openstack network trunk with an additional sub port.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1850,6 +1881,7 @@
           "name": "Remove Sub Ports from Network Trunk",
           "key": "Openstack_Driver_Update_Network_Trunk_Remove_Subports",
           "description": "Use to update an existing Openstack network trunk and remove a set of sub ports.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1882,6 +1914,7 @@
           "name": "Get Sub Ports on Network Trunk",
           "key": "Openstack_Driver_Network_Trunk_Get_Subports",
           "description": "Use to retrieve the list of sub ports attached to an Openstack network trunk.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1908,6 +1941,7 @@
           "name": "Delete Network Trunk",
           "key": "Openstack_Driver_Delete_Network_Trunk",
           "description": "Use to retrieve the list of sub ports attached to an Openstack network trunk.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "category": "Network Trunking",
           "inputParameters": [
             {
@@ -1933,6 +1967,7 @@
         {
           "name": "Get Virtual Machines",
           "description": "Use to get a list of Openstack Virtual Machines",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Get_Virtual_Machines",
           "category": "Compute",
           "inputParameters": [],
@@ -1951,7 +1986,8 @@
         },
         {
           "name": "Get Virtual Machine",
-          "description": "Use to get the details of a specific Opesntack Virtual Machine.",
+          "description": "Use to get the details of a specific Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Get_Virtual_Machine",
           "category": "Compute",
           "inputParameters": [
@@ -1977,7 +2013,8 @@
         },
         {
           "name": "Create Virtual Machine",
-          "description": "Use to create an Opesntack Virtual Machine.",
+          "description": "Use to create an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_VM",
           "category": "Compute",
           "inputParameters": [
@@ -2000,7 +2037,7 @@
             {
               "parameterName": "Network IDs",
               "parameterKey": "openstack_network_identifiers",
-              "parameterDescription": "(Optional) A list of the IDs for networks that should be bound to this Openstack VM Instance.",
+              "parameterDescription": "(Optional) A list of the IDs for networks that should be bound to this Openstack VM Instance. If Management Network Type is 'network', the management network ID may be included in this list to control the order in which it is added to the Virtual Machine relative to other networks.",
               "parameterType": "stringList",
               "inputDetails": {
                 "isOptional": true
@@ -2009,31 +2046,33 @@
             {
               "parameterName": "Port IDs",
               "parameterKey": "openstack_port_identifiers",
-              "parameterDescription": "(Optional) A list of the IDs for ports that should be bound to this Openstack VM Instance.",
+              "parameterDescription": "(Optional) A list of the IDs for ports that should be bound to this Openstack VM Instance. If Management Network Type is 'port', the management port ID may be included in this list to control the order in which it is added to the Virtual Machine relative to other ports.",
               "parameterType": "stringList",
               "inputDetails": {
                 "isOptional": true
               }
             },
             {
-              "parameterName": "Management Network ID",
+              "parameterName": "Management Interface ID",
               "parameterKey": "openstack_vm_management_network",
-              "parameterDescription": "The ID of the port or network that should be bound to this Openstack VM Instance and used as the management connection.",
+              "parameterDescription": "The ID of the port or network that should be bound to this Openstack VM Instance and used as the management connection. Including this ID in the Network IDs parameter provides control over what order this network/port is added to the Virtual Machine relative to other networks and ports.",
               "parameterType": "string",
               "inputDetails": {
                 "fromConstants": true,
-                "constantsPath": "openstack/vmManagementNetwork"
+                "constantsPath": "openstack/vmManagementNetwork",
+                "isOptional": true
               }
             },
             {
-              "parameterName": "Management Network Type",
+              "parameterName": "Management Interface Type",
               "parameterKey": "openstack_vm_management_network_type",
-              "parameterDescription": "The type of ID that was passed as the Management Network ID",
+              "parameterDescription": "The type of ID that was passed as the Management Interface ID. \"none\" should only be used when management of the VM will be done out of band. This option will set the Management IP Address output parameter to '0.0.0.0' and will prevent the use of that output parameter for accessing the VM in future steps.",
               "parameterType": "enumerated",
               "inputDetails": {
                 "options": [
                   "network",
-                  "port"
+                  "port",
+                  "none"
                 ]
               }
             },
@@ -2295,6 +2334,7 @@
         {
           "name": "Delete Virtual Machine",
           "description": "Use to delete an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_VM_Delete",
           "category": "Compute",
           "inputParameters": [
@@ -2321,6 +2361,7 @@
         {
           "name": "Reboot Virtual Machine",
           "description": "Use to reboot an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_VM_Action",
           "category": "Compute",
           "inputParameters": [
@@ -2359,6 +2400,7 @@
         {
           "name": "Attach Volume to Virtual Machine",
           "description": "Use to attach an Openstack Volume to an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Attach_Volume_To_Virtual_Machine",
           "category": "Compute",
           "inputParameters": [
@@ -2391,6 +2433,7 @@
         {
           "name": "Detach Volume from Virtual Machine",
           "description": "Use to detach an Openstack Volume from an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Detach_Volume_From_Virtual_Machine",
           "category": "Compute",
           "inputParameters": [
@@ -2423,6 +2466,7 @@
         {
           "name": "Get Volumes",
           "description": "Use to get a listing of the available Openstack Volumes.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Get_Volumes",
           "category": "Block Storage",
           "inputParameters": [],
@@ -2442,6 +2486,7 @@
         {
           "name": "Get Volume",
           "description": "Use to get the details of a specific Openstack Volume.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Get_Volume",
           "category": "Block Storage",
           "inputParameters": [
@@ -2468,6 +2513,7 @@
         {
           "name": "Create Volume",
           "description": "Use to create an Openstack Volume.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Create_Volume",
           "category": "Block Storage",
           "inputParameters": [
@@ -2528,6 +2574,7 @@
         {
           "name": "Update Volume",
           "description": "Use to update an Openstack Volume.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Update_Volume",
           "category": "Block Storage",
           "inputParameters": [
@@ -2572,6 +2619,7 @@
         {
           "name": "Delete Volume",
           "description": "Use to destroy an Openstack Volume.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Delete_Volume",
           "category": "Block Storage",
           "inputParameters": [
@@ -2598,6 +2646,7 @@
         {
           "name": "Get Snapshots",
           "description": "Use to get a listing of the available Openstack Snapshots.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Get_Snapshots",
           "category": "Block Storage",
           "inputParameters": [],
@@ -2617,6 +2666,7 @@
         {
           "name": "Get Snapshot",
           "description": "Use to get the details of a specific Openstack Snapshot.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Get_Snapshot",
           "category": "Block Storage",
           "inputParameters": [
@@ -2643,6 +2693,7 @@
         {
           "name": "Create Snapshot",
           "description": "Use to create an Openstack Snapshot.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Create_Snapshot",
           "category": "Block Storage",
           "inputParameters": [
@@ -2710,6 +2761,7 @@
         {
           "name": "Delete Snapshot",
           "description": "Use to destroy an Openstack Snapshot.",
+          "allowedExtractionMethods": ["CUSTOM"],
           "key": "Openstack_Driver_Delete_Snapshot",
           "category": "Block Storage",
           "inputParameters": [
@@ -2732,7 +2784,164 @@
               }
             }
           ]
-        }
+       },
+       {
+         "name": "Get Keypairs",
+         "description": "Use to get a list of Openstack Keypairs",
+         "allowedExtractionMethods": ["CUSTOM"],
+         "key": "Openstack_Driver_Get_Keypairs",
+         "category": "Compute",
+         "inputParameters": [],
+         "outputParameters": [
+           {
+             "parameterName": "Raw Response",
+             "parameterKey": "rawResponse",
+             "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+             "parameterType": "string",
+             "outputDetails": {
+               "type": "CUSTOM",
+               "format": "unused"
+             }
+           }
+         ]
+       },
+       {
+         "name": "Get Keypair",
+         "description": "Use to get the details of a specific Openstack Keypair.",
+         "allowedExtractionMethods": ["CUSTOM"],
+         "key": "Openstack_Driver_Get_Keypair",
+         "category": "Compute",
+         "inputParameters": [
+           {
+             "parameterName": "Name",
+             "parameterKey": "openstack_keypair_name",
+             "parameterDescription": "The name of the keypair you wish to query for details about.",
+             "parameterType": "string"
+           }
+         ],
+         "outputParameters": [
+           {
+             "parameterName": "Raw Response",
+             "parameterKey": "rawResponse",
+             "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+             "parameterType": "string",
+             "outputDetails": {
+               "type": "CUSTOM",
+               "format": "unused"
+             }
+           }
+         ]
+       },
+       {
+         "name": "Create Keypair",
+         "description": "Use to create an Openstack Keypair.",
+         "allowedExtractionMethods": ["CUSTOM"],
+         "key": "Openstack_Driver_Create_Keypair",
+         "category": "Compute",
+         "inputParameters": [
+           {
+             "parameterName": "Name",
+             "parameterKey": "openstack_keypair_name",
+             "parameterDescription": "The name to assign the new Openstack Keypair.",
+             "parameterType": "string"
+           },
+           {
+             "parameterName": "Public Key",
+             "parameterKey": "openstack_public_key",
+             "parameterDescription": "(Optional) A public ssh key to import to the Openstack. Leave this value empty to generate a new Keypair.",
+             "parameterType": "string",
+             "inputDetails": {
+               "isOptional": true
+             }
+           }
+         ],
+         "outputParameters": [
+           {
+             "parameterName": "Keypair Name",
+             "parameterKey": "openstack_keypair_name",
+             "parameterDescription": "The name of the newly created Openstack Keypair",
+             "parameterType": "string",
+             "outputDetails": {
+               "type": "CUSTOM",
+               "format": "unused"
+             }
+           },
+           {
+             "parameterName": "Raw Response",
+             "parameterKey": "rawResponse",
+             "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+             "parameterType": "string",
+             "outputDetails": {
+               "type": "CUSTOM",
+               "format": "unused"
+             }
+           }
+         ]
+      },
+      {
+        "name": "Delete Keypair",
+        "description": "Use to delete an Openstack Keypair.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Delete_Keypair",
+        "category": "Compute",
+        "inputParameters": [
+          {
+            "parameterName": "Name",
+            "parameterKey": "openstack_keypair_name",
+            "parameterDescription": "The name to assign the new Openstack Keypair.",
+            "parameterType": "string"
+          }
+        ],
+        "outputParameters": [
+        ]
+      },
+      {
+        "name": "Get Projects",
+        "description": "Use to get a list of Openstack Projects",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Get_Projects",
+        "category": "Identity",
+        "inputParameters": [],
+        "outputParameters": [
+          {
+           "parameterName": "Raw Response",
+           "parameterKey": "rawResponse",
+           "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+           "parameterType": "string",
+           "outputDetails": {
+             "type": "CUSTOM",
+             "format": "unused"
+           }
+          }
+        ]
+      },
+      {
+        "name": "Get Project",
+        "description": "Use to get the details of a specific Openstack Project.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Get_Project",
+        "category": "Identity",
+        "inputParameters": [
+          {
+           "parameterName": "Name",
+           "parameterKey": "openstack_project_name",
+           "parameterDescription": "The name of the project you wish to query for details about.",
+           "parameterType": "string"
+          }
+        ],
+        "outputParameters": [
+          {
+           "parameterName": "Raw Response",
+           "parameterKey": "rawResponse",
+           "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+           "parameterType": "string",
+           "outputDetails": {
+             "type": "CUSTOM",
+             "format": "unused"
+           }
+          }
+        ]
+      }
       ],
       "exportable": true
     }

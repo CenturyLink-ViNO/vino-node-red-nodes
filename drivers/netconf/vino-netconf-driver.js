@@ -245,6 +245,7 @@ module.exports = function(RED)
                }
             }, NodeUtilities.getFaultTolerantTimeoutOpts(inputParameters, () =>
             {
+               client.sshConn.destroy();
                if (connectOp.retry('Timed out while attempting to connect to the netconf server.'))
                {
                   return;
@@ -448,7 +449,6 @@ module.exports = function(RED)
                await outer.closeClient(client);
                throw new Error('Failed to commit changes.');
             }
-            await outer.closeClient(client);
          }
          await outer.closeClient(client);
          return outputParameters;
@@ -698,6 +698,10 @@ module.exports = function(RED)
                      {
                         rpc = result;
                      }
+                     if (rpc.rpc)
+                     {
+                        rpc = rpc.rpc;
+                     }
                      NodeUtilities.Utils.debug('RPC Template: ' + template.replace(/(\r\n|\n|\r|\t)/gm, ' '), outer, msg);
                      client.rpc(rpc, function(theError, json)
                      {
@@ -819,6 +823,7 @@ module.exports = function(RED)
                   key: 'Netconf_Driver_EditConfig',
                   description: 'Use to edit configurations on the Netconf server',
                   webservice: '/netconf/editconfig',
+                  allowedExtractionMethods: ['REGEX', 'XPATH', 'XPATHFULL', 'JSONPATH', 'CUSTOM'],
                   inputParameters:
                       [
                          {
@@ -904,6 +909,7 @@ module.exports = function(RED)
                   key: 'Netconf_Driver_GenericRpc',
                   description: 'Use to send a generic RPC message to the Netconf server and optionally wait for a reply',
                   webservice: '/netconf/genericrpc',
+                  allowedExtractionMethods: ['REGEX', 'XPATH', 'XPATHFULL', 'JSONPATH', 'CUSTOM'],
                   inputParameters:
                       [
                          {
@@ -967,6 +973,7 @@ module.exports = function(RED)
                   name: 'Netconf Get Config',
                   key: 'Netconf_Driver_GetConfig',
                   description: 'Use to get configuration data from the Netconf server',
+                  allowedExtractionMethods: ['REGEX', 'XPATH', 'XPATHFULL', 'JSONPATH', 'CUSTOM'],
                   inputParameters:
                       [
                          {
@@ -1040,6 +1047,7 @@ module.exports = function(RED)
                   name: 'Netconf Get',
                   key: 'Netconf_Driver_Get',
                   description: 'Use to get configuration data and device state information from the Netconf server',
+                  allowedExtractionMethods: ['REGEX', 'XPATH', 'XPATHFULL', 'JSONPATH', 'CUSTOM'],
                   inputParameters:
                       [
                          {

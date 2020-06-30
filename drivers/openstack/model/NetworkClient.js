@@ -193,7 +193,7 @@ module.exports = class OpenstackNetworkClient
 
       const name = this.getParameterValue('openstack_network_name');
       const adminStateUp = this.getParameterValue('openstack_network_admin_state_up');
-      const shared = this.getParameterValue('opesntack_network_shared') ? 1 : 0; // 0 or 1?
+      const shared = this.getParameterValue('openstack_network_shared');
       const tenantId = this.getParameterValue('openstack_tenant_id');
       const dnsDomain = this.getParameterValue('openstack_network_dns_domain');
       const portSecurityEnabled = this.getParameterValue('openstack_port_security_enabled');

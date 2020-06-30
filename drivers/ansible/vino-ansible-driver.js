@@ -86,9 +86,10 @@ module.exports = function(RED)
                throw new Error('Failed to process Ansible command. No template was present in activation request.');
             }
             const playbook = NodeUtilities.Utils.processMustacheTemplate(playbookTemplate.getValue(), inputParameters);
+            const logPlaybook = NodeUtilities.Utils.processMustacheTemplate(playbookTemplate.getValue(), inputParameters, true);
             const inventory = NodeUtilities.Utils.processHandlebarsTemplate(inventoryTemplate, inputParameters);
             utils.debug(`generated inventory file:\n---------------------------------------------------------------\n${inventory}\n\n`, outer, msg);
-            utils.debug(`generated playbook file:\n---------------------------------------------------------------\n${playbook}\n\n`, outer, msg);
+            utils.debug(`generated playbook file:\n---------------------------------------------------------------\n${logPlaybook}\n\n`, outer, msg);
             tmpPlaybookPath = `/tmp/temp-playbook-${Date.now()}.yml`;
             tmpInventoryPath = `/tmp/temp-inventory-${Date.now()}`;
             try
@@ -368,6 +369,7 @@ module.exports = function(RED)
                   key: 'Ansible_Driver',
                   description: 'Use to execute an Ansible playbook on a target machine',
                   webservice: '/ansible/execute',
+                  allowedExtractionMethods: ['REGEX', 'CUSTOM'],
                   inputParameters:
                             [
                                {

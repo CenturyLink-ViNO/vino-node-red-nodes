@@ -1786,6 +1786,182 @@ module.exports = function(RED)
                output[1] = err;
             }
             return output;
+         /** ******************************************/
+         /* Keypairs                                  */
+         /** ******************************************/
+         case 'Openstack_Driver_Get_Keypairs':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getKeypairs();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Keypair':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getKeypair();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Create_Keypair':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.createKeypair();
+               if (typeof result === 'string' || typeof result === undefined)
+               {
+                  output[0] = false;
+                  output[1] = result;
+               }
+               else
+               {
+                  output[0] = true;
+                  const outputParams = [];
+                  output[1] = outputParams;
+                  outputParams.push(new Parameter({
+                     parameterName: 'Raw Output',
+                     parameterKey: 'rawResponse',
+                     parameterType: 'string',
+                     parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                     stringValue: JSON.stringify(result),
+                     outputDetails: {
+                        type: 'CUSTOM',
+                        format: ''
+                     }
+                  }));
+                  outputParams.push(new Parameter({
+                     parameterName: 'Keypair Name',
+                     parameterKey: 'openstack_keypair_name',
+                     parameterDescription: 'The name of the newly created Openstack Keypair',
+                     parameterType: 'string',
+                     stringValue: result.name,
+                     outputDetails: {
+                        type: 'CUSTOM',
+                        format: ''
+                     }
+                  }));
+               }
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Delete_Keypair':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               await client.destroyKeypair();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         /** ******************************************/
+         /* Projects                                  */
+         /** ******************************************/
+         case 'Openstack_Driver_Get_Projects':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getProjects();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Project':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getProject();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
          default:
             return [false, 'An invalid command was selected in the node.'];
          }
