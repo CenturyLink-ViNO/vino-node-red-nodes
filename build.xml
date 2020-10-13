@@ -33,7 +33,7 @@
       </if>
    </target>
 
-   <target name='distribute' depends='eslint.check, dist.prepare'/>
+   <target name='distribute' depends='eslint.check, dist.prepare, dist.node.module'/>
 
    <target name='dist.prepare'>
 
@@ -52,6 +52,48 @@
         <copy todir="${vino-node-red-nodes-dir}/lib/ui/selectize">
             <fileset dir="${tree.top}/lib-web/abacus-lib-js-ots/src/include/selectize">
                 <include name="**/*"/>
+            </fileset>
+        </copy>
+   </target>
+
+   <target name="dist.node.module" depends="eslint.check, dist.prepare">
+        <mkdir dir='${tmp.npm.build.dir}'/>
+        <copy todir="${tmp.npm.build.dir}">
+            <fileset dir="${vino-node-red-nodes.dir}">
+                <include name="*.json"/>
+            </fileset>
+        </copy>
+        <copy tofile='${tmp.npm.build.dir}/package.json' file='package.json' overwrite='true'>
+            <filterset>
+                <filter token='VERSION' value="${version.string}"/>
+            </filterset>
+        </copy>
+        <npm.build src.dir='${vino-node-red-nodes.dir}' dist.dir='${tmp.npm.build.dir}'/>
+        <mkdir dir="${tree.top}/build/npm"/>
+
+        <exec executable="cmd" dir="${tmp.npm.build.dir}" failonerror='true' osfamily='windows'><!-- output="${tmp.npm.build.dir}/dist/out.txt">-->
+            <arg value='/c'/>
+            <arg value='npm'/>
+            <arg value="pack"/>
+        </exec>
+        <exec executable="npm" dir="${tmp.npm.build.dir}" failonerror='true' osfamily='unix'><!-- output="${tmp.npm.build.dir}/dist/out.txt">-->
+            <arg value="pack"/>
+        </exec>
+        <exec executable="cmd" dir="${tmp.npm.build.dir}" failonerror='true' osfamily='windows'><!-- output="${tmp.npm.build.dir}/dist/out.txt">-->
+           <arg value='/c'/>
+           <arg value='npm'/>
+            <arg value="cache"/>
+            <arg value="add"/>
+            <arg value="vino-node-red-nodes-${version.string}.tgz"/>
+        </exec>
+        <exec executable="npm" dir="${tmp.npm.build.dir}" failonerror='true' osfamily='unix'><!-- output="${tmp.npm.build.dir}/dist/out.txt">-->
+            <arg value="cache"/>
+            <arg value="add"/>
+            <arg value="vino-node-red-nodes-${version.string}.tgz"/>
+        </exec>
+        <copy todir="${tree.top}/build/npm">
+            <fileset dir="${tmp.npm.build.dir}">
+                <include name="*.tgz"/>
             </fileset>
         </copy>
    </target>

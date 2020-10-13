@@ -2027,9 +2027,10 @@
             {
               "parameterName": "SSH Key",
               "parameterKey": "openstack_ssh_key",
-              "parameterDescription": "The name of the Openstack SSH Key to inject into the VM. Note: This key must be installed on the openstack cluster.",
+              "parameterDescription": "(Optional) The name of the Openstack SSH Key to inject into the VM. Note: This key must be installed on the openstack cluster.",
               "parameterType": "string",
               "inputDetails": {
+                "isOptional": true,
                 "fromConstants": true,
                 "constantsPath": "openstack/sshKey"
               }
@@ -2939,6 +2940,46 @@
              "type": "CUSTOM",
              "format": "unused"
            }
+          }
+        ]
+      },
+      {
+        "name": "Get Flavors",
+        "description": "Use to get a listing of the available Openstack Flavors.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Get_Flavors",
+        "category": "Flavors",
+        "inputParameters": [],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Get Images",
+        "description": "Use to get a listing of the available Openstack Images.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Get_Images",
+        "category": "Images",
+        "inputParameters": [],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
           }
         ]
       }

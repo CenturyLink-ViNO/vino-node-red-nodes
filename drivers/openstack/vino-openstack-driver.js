@@ -1962,6 +1962,60 @@ module.exports = function(RED)
                output[1] = err;
             }
             return output;
+         case 'Openstack_Driver_Get_Flavors':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getFlavors();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Images':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getImages();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
          default:
             return [false, 'An invalid command was selected in the node.'];
          }

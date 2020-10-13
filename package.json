@@ -1,6 +1,6 @@
 {
-  "name": "node-red-contrib-vino",
-  "version": "1.0.0",
+  "name": "vino-node-red-nodes",
+  "version": "@VERSION@",
   "description": "A Node-RED library containing the nodes required to create ViNO service flows.",
   "keywords": [
     "Node-RED",
