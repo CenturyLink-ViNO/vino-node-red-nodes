@@ -183,13 +183,15 @@ module.exports = class OpenstackBlockStorageClient
       const size = this.getParameterValue('openstack_volume_size');
       const volumeType = this.getParameterValue('openstack_volume_type');
       const snapshotId = this.getParameterValue('openstack_volume_snapshot_id');
+      const imageId = this.getParameterValue('openstack_volume_image_id');
 
       const options = {
          name: name,
          description: description,
          size: size,
          volumeType: volumeType,
-         snapshotId: snapshotId
+         snapshotId: snapshotId,
+         imageRef: imageId
       };
 
       const retry = utils.getFaultTolerantOperation(this.inputParameters);

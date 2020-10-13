@@ -12,16 +12,19 @@ const OpenstackBlockStorageClient = require('./model/BlockStorageClient');
 const Parameter = require('../../lib/driver-utils/parameter');
 const VinoNodeUtility = NodeUtilities.VinoNodeUtility;
 const settingsObject = require('./nodeConfig.json');
+const OpenstackImageClient = require('./model/ImageClient');
+const inspect = require('util').inspect;
 
 module.exports = function(RED)
 {
    function OpenstackDriverNode(config)
    {
-      RED.nodes.createNode(this, config);
       this.NodeUtility = new VinoNodeUtility(
          config.name, config.description, config.baseTypes,
-         config.selectedBaseType, RED
+         config.selectedBaseType, settingsObject.settings.vinoDriverOpenstackCommands.value,
+         settingsObject.settings.vinoDriverOpenstackCommonParameters.value, RED
       );
+      RED.nodes.createNode(this, config);
       this.description = config.description;
       this.statusConfiguration = config.statusConfiguration;
       const outer = this;
@@ -52,6 +55,7 @@ module.exports = function(RED)
          {
             const inputParameters = await outer.NodeUtility.processInputParameters(msg, outer);
             utils.debug('Starting Openstack operation: ' + outer.NodeUtility.selectedBaseType, outer, msg);
+            utils.debug(`message: ${inspect(msg)}`, outer, msg);
             const result = await outer.processMessage(msg, outer, inputParameters);
             if (!result[0])
             {
@@ -1356,6 +1360,60 @@ module.exports = function(RED)
                output[1] = err;
             }
             return output;
+         case 'Openstack_Driver_VM_Start':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.startServer();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_VM_Stop':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.stopServer();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
          case 'Openstack_Driver_VM_Action':
             client = new OpenstackComputeClient(inputParameters);
             output = [];
@@ -1497,6 +1555,152 @@ module.exports = function(RED)
             try
             {
                const result = await client.detachInterface();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Server_Groups':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getServerGroups();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Server_Group':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getServerGroup();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Create_Server_Group':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.createServerGroup();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+               outputParams.push(new Parameter({
+                  parameterName: 'Server Group Id',
+                  parameterKey: 'openstack_server_group_id',
+                  parameterType: 'string',
+                  parameterDescription: 'The id of the server group created.',
+                  stringValue: result.id,
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Delete_Server_Group':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.deleteServerGroup();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Remote_Console':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getRemoteConsole();
                output[0] = true;
                const outputParams = [];
                output[1] = outputParams;
@@ -1989,8 +2193,181 @@ module.exports = function(RED)
                output[1] = err;
             }
             return output;
-         case 'Openstack_Driver_Get_Images':
+         case 'Openstack_Driver_Get_Flavor':
             client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getFlavor();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Create_Flavor':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.createFlavor();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+               outputParams.push(new Parameter({
+                  parameterName: 'Flavor ID',
+                  parameterKey: 'openstack_flavor_id',
+                  parameterType: 'string',
+                  parameterDescription: 'The ID of the flavor that was created.',
+                  stringValue: result.id,
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Delete_Flavor':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.deleteFlavor();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Flavor_Create_Extra_Specs':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.createFlavorExtraSpecs();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Flavor_Update_Extra_Spec':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.updateFlavorExtraSpec();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Flavor_Delete_Extra_Spec':
+            client = new OpenstackComputeClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.deleteFlavorExtraSpec();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Images':
+            client = new OpenstackImageClient(inputParameters);
             output = [];
             try
             {
@@ -2004,6 +2381,201 @@ module.exports = function(RED)
                   parameterType: 'string',
                   parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
                   stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Get_Image':
+            client = new OpenstackImageClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.getImage();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Create_Image':
+            client = new OpenstackImageClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.createImage();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+               outputParams.push(new Parameter({
+                  parameterName: 'Image ID',
+                  parameterKey: 'openstack_image_id',
+                  parameterType: 'string',
+                  parameterDescription: 'The ID of the image that was created.',
+                  stringValue: result.id,
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Update_Image':
+            client = new OpenstackImageClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.updateImage();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+               outputParams.push(new Parameter({
+                  parameterName: 'Image ID',
+                  parameterKey: 'openstack_image_id',
+                  parameterType: 'string',
+                  parameterDescription: 'The ID of the image that was created.',
+                  stringValue: result.id,
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Destroy_Image':
+            client = new OpenstackImageClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.destroyImage();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Import_Image_Data':
+            client = new OpenstackImageClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.importImage();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+            }
+            catch (err)
+            {
+               output[0] = false;
+               output[1] = err;
+            }
+            return output;
+         case 'Openstack_Driver_Create_Image_Import_Task':
+            client = new OpenstackImageClient(inputParameters);
+            output = [];
+            try
+            {
+               const result = await client.createImageImportTask();
+               output[0] = true;
+               const outputParams = [];
+               output[1] = outputParams;
+               outputParams.push(new Parameter({
+                  parameterName: 'Raw Output',
+                  parameterKey: 'rawResponse',
+                  parameterType: 'string',
+                  parameterDescription: 'The raw response from Openstack in the form of a JSON formatted string.',
+                  stringValue: JSON.stringify(result),
+                  outputDetails: {
+                     type: 'CUSTOM',
+                     format: ''
+                  }
+               }));
+               outputParams.push(new Parameter({
+                  parameterName: 'Image ID',
+                  parameterKey: 'openstack_image_id',
+                  parameterType: 'string',
+                  parameterDescription: 'The ID of the image that was created.',
+                  stringValue: result.result.image_id,
                   outputDetails: {
                      type: 'CUSTOM',
                      format: ''

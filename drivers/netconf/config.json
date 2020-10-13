@@ -1,0 +1,369 @@
+{
+  "settings": {
+    "vinoDriverNetconfCommonParameters": {
+      "value": [
+        {
+          "parameterName": "Number of Retries",
+          "parameterKey": "retries",
+          "parameterDescription": "(Optional) The number of times to retry asynchronous operations. Defaults to 5.",
+          "parameterType": "number",
+          "inputDetails":
+          { "isOptional": true }
+        },
+        {
+          "parameterName": "Retry Backoff Factor",
+          "parameterKey": "retryBackoffFactor",
+          "parameterDescription": "(Optional) The factor to use when employing an exponential backoff strategy. Defaults to 3",
+          "parameterType": "number",
+          "inputDetails":
+          { "isOptional": true }
+        },
+        {
+          "parameterName": "Retry Timeout",
+          "parameterKey": "retryTimeout",
+          "parameterDescription": "(Optional) The number of milliseconds to wait between retry attempts. Setting this value will  disable the exponential backoff strategy.",
+          "parameterType": "number",
+          "inputDetails":
+          { "isOptional": true }
+        },
+        {
+          "parameterName": "Minimum Timeout",
+          "parameterKey": "minTimeout",
+          "parameterDescription": "(Optional) The minimum number of milliseconds to wait between retry attempts. This value will be used when employing an exponential backoff strategy. Defaults to 10 seconds (10,000 milliseconds).",
+          "parameterType": "number",
+          "inputDetails":
+          { "isOptional": true }
+        },
+        {
+          "parameterName": "Maximum Timeout",
+          "parameterKey": "maxTimeout",
+          "parameterDescription": "(Optional) The maximum number of milliseconds to wait between retry attempts. This value will be used when employing an exponential backoff strategy. Defaults to 60 seconds (60,000 milliseconds).",
+          "parameterType": "number",
+          "inputDetails":
+          { "isOptional": true }
+        }
+      ],
+      "exportable": true
+    },
+    "vinoDriverNetconfCommands": {
+      "value": [
+        {
+          "name": "Netconf Edit Config",
+          "key": "Netconf_Driver_EditConfig",
+          "description": "Use to edit configurations on the Netconf server",
+          "webservice": "/netconf/editconfig",
+          "allowedExtractionMethods": ["REGEX", "XPATH", "XPATHFULL", "JSONPATH", "CUSTOM"],
+          "inputParameters":
+          [
+            {
+              "parameterName": "Target IP Address",
+              "parameterKey": "targetAddress",
+              "parameterDescription": "IP address of the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Port",
+              "parameterKey": "targetPort",
+              "parameterDescription": "Port of the Netconf server",
+              "parameterType": "number"
+            },
+            {
+              "parameterName": "Target Username",
+              "parameterKey": "targetUserName",
+              "parameterDescription": "Username for the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Password",
+              "parameterKey": "targetPassword",
+              "parameterDescription": "Password for the Netconf server",
+              "parameterType": "string",
+              "encrypt": true,
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "SSH Key",
+              "parameterKey": "sshKey",
+              "parameterDescription": "SSH Private Key for the Netconf server",
+              "parameterType": "string",
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "Template",
+              "parameterKey": "template",
+              "parameterDescription": "Template string for the \"edit-config\" operation. Uses Handlebars templating",
+              "parameterType": "encodedString"
+            },
+            {
+              "parameterName": "Datastore",
+              "parameterKey": "datastore",
+              "parameterDescription": "Datastore to operate on: 'running', 'candidate', 'startup'",
+              "parameterType": "enumerated",
+              "inputDetails":
+              { "options": ["running", "candidate", "startup"] }
+            },
+            {
+              "parameterName": "datastore operation",
+              "parameterKey": "operation",
+              "parameterDescription": "datastore operation: 'merge', 'replace', 'none'",
+              "parameterType": "enumerated",
+              "inputDetails":
+              {
+                "isOptional": true,
+                "options": ["merge", "replace", "none"]
+              }
+            },
+            {
+              "parameterName": "Commit",
+              "parameterKey": "commit",
+              "parameterDescription": "Set to true if you want to send a commit after the edit-config",
+              "parameterType": "boolean"
+            },
+            {
+              "parameterName": "Copy Running To Candidate",
+              "parameterKey": "copyRunningToCandidate",
+              "parameterDescription": "Set to true if you want to copy the running config to the candidate config before the edit-config operation",
+              "parameterType": "boolean"
+            }
+          ],
+          "outputParameters":
+          [
+          ]
+        },
+        {
+          "name": "Netconf Generic RPC",
+          "key": "Netconf_Driver_GenericRpc",
+          "description": "Use to send a generic RPC message to the Netconf server and optionally wait for a reply",
+          "webservice": "/netconf/genericrpc",
+          "allowedExtractionMethods": ["REGEX", "XPATH", "XPATHFULL", "JSONPATH", "CUSTOM"],
+          "inputParameters":
+          [
+            {
+              "parameterName": "Target IP Address",
+              "parameterKey": "targetAddress",
+              "parameterDescription": "IP address of the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Port",
+              "parameterKey": "targetPort",
+              "parameterDescription": "Port of the Netconf server",
+              "parameterType": "number"
+            },
+            {
+              "parameterName": "Target Username",
+              "parameterKey": "targetUserName",
+              "parameterDescription": "Username for the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Password",
+              "parameterKey": "targetPassword",
+              "parameterDescription": "Password for the Netconf server",
+              "parameterType": "string",
+              "encrypt": true,
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "SSH Key",
+              "parameterKey": "sshKey",
+              "parameterDescription": "SSH Private Key for the Netconf server",
+              "parameterType": "string",
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "Template",
+              "parameterKey": "template",
+              "parameterDescription": "Template string for the rpc request body. Uses Handlebars templating",
+              "parameterType": "encodedString"
+            }
+          ],
+          "outputParameters":
+          [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Netconf API. XML formatted String",
+              "parameterType": "string",
+              "outputDetails":
+              {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Netconf Get Config",
+          "key": "Netconf_Driver_GetConfig",
+          "description": "Use to get configuration data from the Netconf server",
+          "allowedExtractionMethods": ["REGEX", "XPATH", "XPATHFULL", "JSONPATH", "CUSTOM"],
+          "inputParameters":
+          [
+            {
+              "parameterName": "Target IP Address",
+              "parameterKey": "targetAddress",
+              "parameterDescription": "IP address of the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Port",
+              "parameterKey": "targetPort",
+              "parameterDescription": "Port of the Netconf server",
+              "parameterType": "number"
+            },
+            {
+              "parameterName": "Target Username",
+              "parameterKey": "targetUserName",
+              "parameterDescription": "Username for the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Password",
+              "parameterKey": "targetPassword",
+              "parameterDescription": "Password for the Netconf server",
+              "parameterType": "string",
+              "encrypt": true,
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "SSH Key",
+              "parameterKey": "sshKey",
+              "parameterDescription": "SSH Private Key for the Netconf server",
+              "parameterType": "string",
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "Datastore",
+              "parameterKey": "datastore",
+              "parameterDescription": "Datastore to operate on: 'running', 'candidate', 'startup'",
+              "parameterType": "enumerated",
+              "inputDetails":
+              { "options": ["running", "candidate", "startup"] }
+            },
+            {
+              "parameterName": "Template",
+              "parameterKey": "template",
+              "parameterDescription": "Template string for the \"get-config\" operation. Uses Handlebars templating",
+              "parameterType": "encodedString",
+              "inputDetails":
+              { "isOptional": true }
+            }
+          ],
+          "outputParameters":
+          [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Netconf API. XML formatted String",
+              "parameterType": "string",
+              "outputDetails":
+              {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Netconf Get",
+          "key": "Netconf_Driver_Get",
+          "description": "Use to get configuration data and device state information from the Netconf server",
+          "allowedExtractionMethods": ["REGEX", "XPATH", "XPATHFULL", "JSONPATH", "CUSTOM"],
+          "inputParameters":
+          [
+            {
+              "parameterName": "Target IP Address",
+              "parameterKey": "targetAddress",
+              "parameterDescription": "IP address of the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Port",
+              "parameterKey": "targetPort",
+              "parameterDescription": "Port of the Netconf server",
+              "parameterType": "number"
+            },
+            {
+              "parameterName": "Target Username",
+              "parameterKey": "targetUserName",
+              "parameterDescription": "Username for the Netconf server",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Target Password",
+              "parameterKey": "targetPassword",
+              "parameterDescription": "Password for the Netconf server",
+              "parameterType": "string",
+              "encrypt": true,
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "SSH Key",
+              "parameterKey": "sshKey",
+              "parameterDescription": "SSH Private Key for the Netconf server",
+              "parameterType": "string",
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "Datastore",
+              "parameterKey": "datastore",
+              "parameterDescription": "Datastore to operate on: 'running', 'candidate', 'startup'",
+              "parameterType": "enumerated",
+              "inputDetails":
+              { "options": ["running", "candidate", "startup"] }
+            },
+            {
+              "parameterName": "Template",
+              "parameterKey": "template",
+              "parameterDescription": "Template string for the \"get-config\" operation. Uses Handlebars templating",
+              "parameterType": "encodedString",
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "Number of Retries",
+              "parameterKey": "retries",
+              "parameterDescription": "The number of retries to attempt when performing an action.  Defaults to 5",
+              "parameterType": "number",
+              "inputDetails":
+              { "isOptional": true }
+            },
+            {
+              "parameterName": "Wait time between retries",
+              "parameterKey": "retryTimeout",
+              "parameterDescription": "The number of milli-seconds to wait between retries. Defaults to 10 seconds (10,000 milli-seconds)",
+              "parameterType": "number",
+              "inputDetails":
+              { "isOptional": true }
+            }
+          ],
+          "outputParameters":
+          [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Netconf API. XML formatted String",
+              "parameterType": "string",
+              "outputDetails":
+              {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        }
+
+      ],
+      "exportable": true
+    }
+  }
+}

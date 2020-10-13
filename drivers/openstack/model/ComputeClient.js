@@ -410,7 +410,7 @@ module.exports = class OpenstackComputeClient
             mapping.guest_format = format;
          }
 
-         const volumeSize = outer.getParameterValue('openstack_bdm_volumeSize');
+         const volumeSize = outer.getParameterValue('openstack_bdm_volume_size');
          if (volumeSize !== null && volumeSize !== undefined)
          {
             hasParams = true;
@@ -542,6 +542,52 @@ module.exports = class OpenstackComputeClient
       });
       return retryPromise;
    }
+   waitForShutdown(id)
+   {
+      const outer = this;
+      this.setParameterValue('openstack_vm_id', 'string', id);
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(async() =>
+         {
+            try
+            {
+               const server = await outer.getServer();
+               if (server && server.status === 'STOPPED')
+               {
+                  retry.stop();
+                  resolve(server);
+               }
+               else
+               {
+                  if (retry.retry('Server is not shut down'))
+                  {
+                     return;
+                  }
+                  reject(new Error('Failed to determine if server was shut down. Retry timeout exceeded'));
+               }
+            }
+            catch (err)
+            {
+               if (retry.retry(err))
+               {
+                  return;
+               }
+               reject(new Error('Failed to query for server. Could not determine if the server was shut down.'));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to determine if a server has shut down successfully.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to determine if a server has shut down successfully.'));
+         }));
+      });
+      return retryPromise;
+   }
 
    destroyServer()
    {
@@ -628,7 +674,94 @@ module.exports = class OpenstackComputeClient
       });
       return retryPromise;
    }
+   startServer()
+   {
+      const outer = this;
 
+      const vmId = this.getParameterValue('openstack_vm_id');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().startServer(vmId, async(err) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While starting a VM: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  const server = await outer.waitForBoot(vmId);
+                  resolve(server);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to start an Openstack Server.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to start an Openstack Server.'));
+         }));
+      });
+      return retryPromise;
+   }
+   stopServer()
+   {
+      const outer = this;
+
+      const vmId = this.getParameterValue('openstack_vm_id');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().stopServer(vmId, async(err) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While stopping a VM: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  const server = await outer.waitForBoot(vmId);
+                  resolve(server);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to stop an Openstack Server.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to stop an Openstack Server.'));
+         }));
+      });
+      return retryPromise;
+   }
    rebootServer()
    {
       const outer = this;
@@ -731,7 +864,297 @@ module.exports = class OpenstackComputeClient
       });
       return retryPromise;
    }
+   getFlavor()
+   {
+      const outer = this;
 
+      const id = this.getParameterValue('openstack_flavor_id');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().getFlavor(id, (err, flavor) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting flavor: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(flavor);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get Openstack VM Flavor.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get Openstack VM Flavor.'));
+         }));
+      });
+      return retryPromise;
+   }
+   createFlavor()
+   {
+      const outer = this;
+
+      const name = this.getParameterValue('openstack_flavor_name');
+      const description = this.getParameterValue('openstack_flavor_description');
+      const ram = this.getParameterValue('openstack_flavor_ram');
+      const disk = this.getParameterValue('openstack_flavor_disk');
+      const vcpus = this.getParameterValue('openstack_flavor_vcpus');
+      const ephemeralDisk = this.getParameterValue('openstack_flavor_ephemeral_disk');
+      const swap = this.getParameterValue('openstack_flavor_swap');
+      const rxtxFactor = this.getParameterValue('openstack_flavor_rxtx_factor');
+      const isPublic = this.getParameterValue('openstack_flavor_is_public');
+
+      const options = {
+         name: name,
+         description: description,
+         ram: ram,
+         disk: disk,
+         vcpus: vcpus,
+         'OS-FLV-EXT-DATA:ephemeral': ephemeralDisk,
+         swap: swap,
+         rxtx_factor: rxtxFactor,
+         'os-flavor-access:is_public': isPublic
+      };
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().createFlavor(options, (err, flavor) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While creating flavor: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(flavor);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to create Openstack VM Flavor.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to create Openstack VM Flavor.'));
+         }));
+      });
+      return retryPromise;
+   }
+   deleteFlavor()
+   {
+      const outer = this;
+
+      const id = this.getParameterValue('openstack_flavor_id');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().deleteFlavor(id, (err) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While deleting flavor: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve();
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to delete Openstack Flavor.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to delete Openstack Flavor.'));
+         }));
+      });
+      return retryPromise;
+   }
+   createFlavorExtraSpecs()
+   {
+      const outer = this;
+
+      const id = this.getParameterValue('openstack_flavor_id');
+      const extraSpecs = this.getParameterValue('openstack_flavor_extra_specs');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().createFlavorExtraSpecs(id, extraSpecs, (err, specs) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While creating flavor extra specs: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(specs);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to create Openstack Flavor Extra Specs.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to create Openstack Flavor Extra Specs.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   updateFlavorExtraSpec()
+   {
+      const outer = this;
+
+      const id = this.getParameterValue('openstack_flavor_id');
+      const key = this.getParameterValue('openstack_flavor_extra_spec_key');
+      const value = this.getParameterValue('openstack_flavor_extra_spec_value');
+
+      const options =
+      {
+         key: key,
+         value: value
+      };
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().updateFlavorExtraSpec(id, options, (err, specs) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While updating flavor extra spec: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(specs);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to update Openstack Flavor Extra Spec.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to update Openstack Flavor Extra Spec.'));
+         }));
+      });
+      return retryPromise;
+   }
+   deleteFlavorExtraSpec()
+   {
+      const outer = this;
+
+      const id = this.getParameterValue('openstack_flavor_id');
+      const key = this.getParameterValue('openstack_flavor_extra_spec_key');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().deleteFlavorExtraSpec(id, key, (err) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While deleting flavor extra specs: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve();
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to delete Openstack Flavor Extra Spec.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to delete Openstack Flavor Extra Spec.'));
+         }));
+      });
+      return retryPromise;
+   }
+
+   // TODO: This is using a deprecated API on the compute service. Switch to new Image client which calls the Glance API directly
    getImages()
    {
       const outer = this;
@@ -966,6 +1389,230 @@ module.exports = class OpenstackComputeClient
             }
             retry.stop();
             reject(new Error('Timed out while attempting to detach an interface from a VM.'));
+         }));
+      });
+      return retryPromise;
+   }
+   getServerGroups()
+   {
+      const outer = this;
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().getServerGroups((err, results) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting server groups: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(results);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get server groups.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get server groups.'));
+         }));
+      });
+      return retryPromise;
+   }
+   getServerGroup()
+   {
+      const outer = this;
+
+      const serverGroupId = this.getParameterValue('openstack_server_group_id');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().getServerGroup(serverGroupId, (err, result) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting server group: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(result);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to get server group.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to get server group.'));
+         }));
+      });
+      return retryPromise;
+   }
+   createServerGroup()
+   {
+      const outer = this;
+
+      const name = this.getParameterValue('openstack_server_group_name');
+      const policy = this.getParameterValue('openstack_server_group_policy');
+      const rules = this.getParameterValue('openstack_server_group_rules');
+
+      const options = {
+         name: name,
+         policy: policy,
+         rules: rules
+      };
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().createServerGroup(options, (err, result) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While creating server group: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(result);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to create server group.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to create server group.'));
+         }));
+      });
+      return retryPromise;
+   }
+   deleteServerGroup()
+   {
+      const outer = this;
+
+      const serverGroupId = this.getParameterValue('openstack_server_group_id');
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().destroyServerGroup(serverGroupId, (err) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While deleting server group: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(true);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while attempting to delete server group.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while attempting to delete server group.'));
+         }));
+      });
+      return retryPromise;
+   }
+   getRemoteConsole()
+   {
+      const outer = this;
+
+      const vmId = this.getParameterValue('openstack_vm_id');
+      const type = this.getParameterValue('openstack_remote_console_type');
+      const protocol = this.getParameterValue('openstack_remote_console_protocol');
+
+      const options = { type: type, protocol: protocol };
+
+      const retry = utils.getFaultTolerantOperation(this.inputParameters);
+      const retryPromise = new Promise((resolve, reject) =>
+      {
+         retry.attempt(() =>
+         {
+            try
+            {
+               outer.getClient().getRemoteConsole(vmId, options, (err, result) =>
+               {
+                  if (retry.retry(err))
+                  {
+                     return;
+                  }
+                  if (err)
+                  {
+                     reject(new Error(`While getting remote console: ${OpenstackComputeClient.generateErrorMessage(err)}`));
+                  }
+                  resolve(result);
+               });
+            }
+            catch (err)
+            {
+               retry.stop();
+               reject(new Error(err));
+            }
+         }, NodeUtilities.getFaultTolerantTimeoutOpts(outer.inputParameters, () =>
+         {
+            if (retry.retry('Timed out while getting remote console.'))
+            {
+               return;
+            }
+            retry.stop();
+            reject(new Error('Timed out while getting remote console.'));
          }));
       });
       return retryPromise;

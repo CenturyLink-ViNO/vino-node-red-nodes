@@ -2360,6 +2360,60 @@
           ]
         },
         {
+          "name": "Start Virtual Machine",
+          "description": "Use to start an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_VM_Start",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to start.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Stop Virtual Machine",
+          "description": "Use to stop an Openstack Virtual Machine.",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_VM_Stop",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to stop.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
           "name": "Reboot Virtual Machine",
           "description": "Use to reboot an Openstack Virtual Machine.",
           "allowedExtractionMethods": ["CUSTOM"],
@@ -2369,7 +2423,7 @@
             {
               "parameterName": "VM ID",
               "parameterKey": "openstack_vm_id",
-              "parameterDescription": "The ID of the Openstack Virtual Machine to delete.",
+              "parameterDescription": "The ID of the Openstack Virtual Machine to reboot.",
               "parameterType": "string"
             },
             {
@@ -2465,6 +2519,186 @@
           ]
         },
         {
+          "name": "Get Server Groups",
+          "description": "Use to get a listing of Openstack Server Groups",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_Get_Server_Groups",
+          "category": "Compute",
+          "inputParameters": [],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Server Group",
+          "description": "Use to get details of an Openstack Server Group",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_Get_Server_Group",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Server Group ID",
+              "parameterKey": "openstack_server_group_id",
+              "parameterDescription": "The ID of the Openstack Server Group.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Server Group",
+          "description": "Use to create a new Openstack Server Group",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_Create_Server_Group",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_server_group_name",
+              "parameterDescription": "The name of the Openstack Server Group.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Policy",
+              "parameterKey": "openstack_server_group_policy",
+              "parameterDescription": "The scheduling policy of the Openstack Server Group.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "anti-affinity",
+                  "affinity",
+                  "soft-anti-affinity",
+                  "soft-affinity"
+                ]
+              }
+            },
+            {
+             "parameterName": "Rules",
+             "parameterKey": "openstack_server_group_rules",
+             "parameterDescription": "(Optional) The rules field, which is a dict, can be applied to the policy. Requires Openstack Compute API version 2.64 or greater. Check Openstack documentation for valid rules.",
+             "parameterType": "json",
+             "inputDetails": {
+              "isOptional": true
+             }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            },
+            {
+              "parameterName": "Server Group ID",
+              "parameterKey": "openstack_server_group_id",
+              "parameterDescription": "The ID of the newly created Openstack Server Group",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Server Group",
+          "description": "Use to delete an Openstack Server Group",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_Delete_Server_Group",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "Server Group ID",
+              "parameterKey": "openstack_server_group_id",
+              "parameterDescription": "The ID of the Openstack Server Group.",
+              "parameterType": "string"
+            }
+          ],
+          "outputParameters": []
+        },
+        {
+          "name": "Get Remote Console",
+          "description": "Use to get details of a remote console",
+          "allowedExtractionMethods": ["CUSTOM"],
+          "key": "Openstack_Driver_Get_Remote_Console",
+          "category": "Compute",
+          "inputParameters": [
+            {
+              "parameterName": "VM ID",
+              "parameterKey": "openstack_vm_id",
+              "parameterDescription": "The ID of the Openstack VM.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Type",
+              "parameterKey": "openstack_remote_console_type",
+              "parameterDescription": "The type of remote console.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "vnc",
+                  "spice",
+                  "rdp",
+                  "serial",
+                  "mks"
+                ]
+              }
+            },
+            {
+              "parameterName": "Protocol",
+              "parameterKey": "openstack_remote_console_protocol",
+              "parameterDescription": "The protocol of remote console..",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": [
+                  "novnc",
+                  "rdp-html5",
+                  "spice-html5",
+                  "serial",
+                  "webmks"
+                ]
+              }
+            }
+          ],
+          "outputParameters": [
+            {
+              "parameterName": "Raw Response",
+              "parameterKey": "rawResponse",
+              "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+              "parameterType": "string",
+              "outputDetails": {
+                "type": "CUSTOM",
+                "format": "unused"
+              }
+            }
+          ]
+        },
+        {
           "name": "Get Volumes",
           "description": "Use to get a listing of the available Openstack Volumes.",
           "allowedExtractionMethods": ["CUSTOM"],
@@ -2543,6 +2777,15 @@
               "parameterName": "Snapshot ID",
               "parameterKey": "openstack_volume_snapshot_id",
               "parameterDescription": "(Optional) The ID of a snapshot to create a volume out of.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Image ID",
+              "parameterKey": "openstack_volume_image_id",
+              "parameterDescription": "(Optional) The UUID of the image from which you want to create the volume. Required to create a bootable volume.",
               "parameterType": "string",
               "inputDetails": {
                 "isOptional": true
@@ -2964,6 +3207,243 @@
         ]
       },
       {
+        "name": "Get Flavor",
+        "description": "Use to get details of an existing Openstack Flavors.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Get_Flavor",
+        "category": "Flavors",
+        "inputParameters": [
+          {
+           "parameterName": "Flavor ID",
+           "parameterKey": "openstack_flavor_id",
+           "parameterDescription": "The ID of the flavor you wish to query for details about.",
+           "parameterType": "string"
+          }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Create Flavor",
+        "description": "Use to create a new Openstack Flavor.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Create_Flavor",
+        "category": "Flavors",
+        "inputParameters": [
+          {
+           "parameterName": "Name",
+           "parameterKey": "openstack_flavor_name",
+           "parameterDescription": "The name of the flavor to create.",
+           "parameterType": "string"
+          },
+          {
+           "parameterName": "Description",
+           "parameterKey": "openstack_flavor_description",
+           "parameterDescription": "(Optional) A free form description of the flavor. Limited to 65535 characters in length. Only printable characters are allowed.",
+           "parameterType": "string",
+           "inputDetails":{
+            "isOptional": true
+           }
+          },
+          {
+           "parameterName": "RAM",
+           "parameterKey": "openstack_flavor_ram",
+           "parameterDescription": "The amount of RAM a flavor has, in MiB.",
+           "parameterType": "number"
+          },
+          {
+           "parameterName": "Disk",
+           "parameterKey": "openstack_flavor_disk",
+           "parameterDescription": "The size of the root disk that will be created in GiB. If 0 the root disk will be set to exactly the size of the image used to deploy the instance. However, in this case filter scheduler cannot select the compute host based on the virtual image size.",
+           "parameterType": "number"
+          },
+          {
+           "parameterName": "VCPUS",
+           "parameterKey": "openstack_flavor_vcpus",
+           "parameterDescription": "The number of virtual CPUs that will be allocated to the server.",
+           "parameterType": "number"
+          },
+          {
+           "parameterName": "Ephemeral Disk",
+           "parameterKey": "openstack_flavor_ephemeral_disk",
+           "parameterDescription": "(Optional) The size of the ephemeral disk that will be created, in GiB. Ephemeral disks may be written over on server state changes. So should only be used as a scratch space for applications that are aware of its limitations. Defaults to 0.",
+           "parameterType": "number",
+           "inputDetails":{
+            "isOptional": true
+           }
+          },
+          {
+           "parameterName": "Swap",
+           "parameterKey": "openstack_flavor_swap",
+           "parameterDescription": "(Optional) The size of a dedicated swap disk that will be allocated, in MiB. If 0 (the default), no dedicated swap disk will be created.",
+           "parameterType": "number",
+           "inputDetails":{
+            "isOptional": true
+           }
+          },
+          {
+           "parameterName": "RXTX Factor",
+           "parameterKey": "openstack_flavor_rxtx_factor",
+           "parameterDescription": "(Optional) The receive / transmit factor (as a float) that will be set on ports if the network backend supports the QOS extension. Otherwise it will be ignored. It defaults to 1.0.",
+           "parameterType": "string",
+           "inputDetails":{
+            "isOptional": true
+           }
+          },
+          {
+           "parameterName": "Is Public",
+           "parameterKey": "openstack_flavor_is_public",
+           "parameterDescription": "(Optional) Whether the flavor is public (available to all projects) or scoped to a set of projects. Default is True if not specified.",
+           "parameterType": "boolean",
+           "inputDetails":{
+            "isOptional": true
+           }
+          }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          },
+          {
+            "parameterName": "Flavor ID",
+            "parameterKey": "openstack_flavor_id",
+            "parameterDescription": "The ID of the newly created Openstack Flavor",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Delete Flavor",
+        "description": "Use to delete an existing Openstack Flavors.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Delete_Flavor",
+        "category": "Flavors",
+        "inputParameters": [
+          {
+           "parameterName": "Flavor ID",
+           "parameterKey": "openstack_flavor_id",
+           "parameterDescription": "The ID of the flavor you wish to delete.",
+           "parameterType": "string"
+          }
+        ],
+        "outputParameters": []
+      },
+      {
+        "name": "Create Flavor Extra Specs",
+        "description": "Use to add extra specs to an existing Openstack Flavors.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Flavor_Create_Extra_Specs",
+        "category": "Flavors",
+        "inputParameters": [
+          {
+           "parameterName": "Flavor ID",
+           "parameterKey": "openstack_flavor_id",
+           "parameterDescription": "The ID of the flavor you wish to add the extra specs to.",
+           "parameterType": "string"
+          },
+          {
+           "parameterName": "Extra Specs",
+           "parameterKey": "openstack_flavor_extra_specs",
+           "parameterDescription": "A dictionary of extra specs key value pairs specified as a JSON object",
+           "parameterType": "json"
+          }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Update Flavor Extra Spec",
+        "description": "Use to update the value of an extra spec on an existing Openstack Flavors.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Flavor_Update_Extra_Spec",
+        "category": "Flavors",
+        "inputParameters": [
+          {
+           "parameterName": "Flavor ID",
+           "parameterKey": "openstack_flavor_id",
+           "parameterDescription": "The ID of the flavor you wish to add the extra specs to.",
+           "parameterType": "string"
+          },
+          {
+           "parameterName": "Key",
+           "parameterKey": "openstack_flavor_extra_spec_key",
+           "parameterDescription": "The extra spec key to be updated.",
+           "parameterType": "string"
+          },
+          {
+           "parameterName": "Value",
+           "parameterKey": "openstack_flavor_extra_spec_value",
+           "parameterDescription": "The new extra spec value.",
+           "parameterType": "string"
+          }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Delete Flavor Extra Spec",
+        "description": "Use to delete an extra spec from an existing Openstack Flavors.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Flavor_Delete_Extra_Spec",
+        "category": "Flavors",
+        "inputParameters": [
+          {
+           "parameterName": "Flavor ID",
+           "parameterKey": "openstack_flavor_id",
+           "parameterDescription": "The ID of the flavor you wish to add the extra specs to.",
+           "parameterType": "string"
+          },
+          {
+           "parameterName": "Key",
+           "parameterKey": "openstack_flavor_extra_spec_key",
+           "parameterDescription": "The extra spec key to be deleted.",
+           "parameterType": "string"
+          }
+        ],
+        "outputParameters": []
+      },
+      {
         "name": "Get Images",
         "description": "Use to get a listing of the available Openstack Images.",
         "allowedExtractionMethods": ["CUSTOM"],
@@ -2975,6 +3455,500 @@
             "parameterName": "Raw Response",
             "parameterKey": "rawResponse",
             "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Get Image",
+        "description": "Use to get details of an existing Openstack Image.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Get_Image",
+        "category": "Images",
+        "inputParameters": [
+            {
+              "parameterName": "Image Id",
+              "parameterKey": "openstack_image_id",
+              "parameterDescription": "The ID of the image.",
+              "parameterType": "string"
+            }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Create Image",
+        "description": "Use to create a new Openstack Images.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Create_Image",
+        "category": "Images",
+        "inputParameters": [
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_image_name",
+              "parameterDescription": "(Optional) The name of the image.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Container Format",
+              "parameterKey": "openstack_image_container_format",
+              "parameterDescription": "(Optional) Format of the image container.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": 
+                [
+                  "ami",
+                  "ari",
+                  "aki",
+                  "bare",
+                  "ovf",
+                  "ova",
+                  "docker"
+                ]
+              }
+            },
+            {
+              "parameterName": "Disk Format",
+              "parameterKey": "openstack_image_disk_format",
+              "parameterDescription": "(Optional) The format of the disk.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options":
+                [
+                  "ami",
+                  "ari",
+                  "aki",
+                  "vhd",
+                  "vhdx",
+                  "vmdk",
+                  "raw",
+                  "qcow2",
+                  "vdi",
+                  "ploop",
+                  "iso"
+                ]
+              }
+            },
+            {
+              "parameterName": "Minimum Disk",
+              "parameterKey": "openstack_image_min_disk",
+              "parameterDescription": "(Optional) Amount of disk space in GB that is required to boot the image.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Minimum RAM",
+              "parameterKey": "openstack_image_min_ram",
+              "parameterDescription": "(Optional) Amount of RAM in MB that is required to boot the image.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Protected",
+              "parameterKey": "openstack_image_protected",
+              "parameterDescription": "(Optional) Image protection for deletion.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Tags",
+              "parameterKey": "openstack_image_tags",
+              "parameterDescription": "(Optional) List of tags for this image. Each tag is a string of at most 255 chars. The maximum number of tags allowed on an image is set by the operator.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Visibility",
+              "parameterKey": "openstack_image_visibility",
+              "parameterDescription": "(Optional) The availability zone candidate for the network.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "public",
+                  "private",
+                  "shared",
+                  "community"
+                ]
+              }
+            },
+            {
+              "parameterName": "Additional Properties",
+              "parameterKey": "openstack_image_additional_properties",
+              "parameterDescription": "(Optional) A list of key value pairs to be added to the image specified as 'key:value'. Keys are limited to 255 chars in length. E.g. architecture:x86_64",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          },
+          {
+            "parameterName": "Image ID",
+            "parameterKey": "openstack_image_id",
+            "parameterDescription": "The ID of the created image",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Update Image",
+        "description": "Use to update an existing Openstack Image.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Update_Image",
+        "category": "Images",
+        "inputParameters": [
+            {
+              "parameterName": "Image Id",
+              "parameterKey": "openstack_image_id",
+              "parameterDescription": "The ID of the existing image to update.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Update Operation",
+              "parameterKey": "openstack_image_update_operation",
+              "parameterDescription": "(Optional) Format of the image container.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": 
+                [
+                  "add",
+                  "remove",
+                  "replace"
+                ]
+              }
+            },
+            {
+              "parameterName": "Update Path",
+              "parameterKey": "openstack_image_update_path",
+              "parameterDescription": "(Optional) The path of the property to update. Must start with a '/'. E.g. '/name' to update the name of the image",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Update Value",
+              "parameterKey": "openstack_image_update_value",
+              "parameterDescription": "(Optional) The value to add/replace. Not required for remove operation",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          },
+          {
+            "parameterName": "Image ID",
+            "parameterKey": "openstack_image_id",
+            "parameterDescription": "The ID of the created image",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Destroy Image",
+        "description": "Use to destroy an existing Openstack Image.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Destroy_Image",
+        "category": "Images",
+        "inputParameters": [
+            {
+              "parameterName": "Image Id",
+              "parameterKey": "openstack_image_id",
+              "parameterDescription": "The ID of the image to destroy.",
+              "parameterType": "string"
+            }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Import Image Data (Experimental)",
+        "description": "Use to upload image data to an existing Openstack Image",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Import_Image_Data",
+        "category": "Images",
+        "inputParameters": [
+            {
+              "parameterName": "Image Id",
+              "parameterKey": "openstack_image_id",
+              "parameterDescription": "The ID of the existing image to import the data to.",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Method",
+              "parameterKey": "openstack_image_import_method",
+              "parameterDescription": "The import method.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "options": 
+                [
+                  "glance-direct",
+                  "web-download",
+                  "copy-image"
+                ]
+              }
+            },
+            {
+              "parameterName": "Import URI",
+              "parameterKey": "openstack_image_import_uri",
+              "parameterDescription": "(Optional) The URI of the image to import. Required when using web-download method",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "All Stores Must Succeed",
+              "parameterKey": "openstack_image_import_all_stores_must_succeed",
+              "parameterDescription": "(Optional) A boolean parameter indicating the behavior of the import workflow when an error occurs. When set to True, if an error occurs during the upload in at least one store, the worfklow fails, the data is deleted from stores where copying is done (not staging), and the state of the image is unchanged. When set to False, the workflow will fail (data deleted from stores, …) only if the import fails on all stores specified by the user. In case of a partial success, the locations added to the image will be the stores where the data has been correctly uploaded.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "All Stores",
+              "parameterKey": "openstack_image_import_all_stores",
+              "parameterDescription": "(Optional) When set to True the data will be imported to the set of stores you may consume from this particular deployment of Glance (ie: the same set of stores returned to a call to /v2/info/stores on the glance-api the request hits). This can’t be used simultaneously with the stores parameter.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Stores",
+              "parameterKey": "openstack_image_import_stores",
+              "parameterDescription": "(Optional) List of store id to import the image binary data to.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Create Image Import Task",
+        "description": "Use to create a new task to import a new image into Openstack.",
+        "allowedExtractionMethods": ["CUSTOM"],
+        "key": "Openstack_Driver_Create_Image_Import_Task",
+        "category": "Images",
+        "inputParameters": [
+            {
+              "parameterName": "Name",
+              "parameterKey": "openstack_image_name",
+              "parameterDescription": "(Optional) The name of the image.",
+              "parameterType": "string",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Import From",
+              "parameterKey": "openstack_image_import_from",
+              "parameterDescription": "The URI of the image to import",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Import From Format",
+              "parameterKey": "openstack_image_import_from_format",
+              "parameterDescription": "The format of the image being imported",
+              "parameterType": "string"
+            },
+            {
+              "parameterName": "Container Format",
+              "parameterKey": "openstack_image_container_format",
+              "parameterDescription": "(Optional) Format of the image container.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": 
+                [
+                  "ami",
+                  "ari",
+                  "aki",
+                  "bare",
+                  "ovf",
+                  "ova",
+                  "docker"
+                ]
+              }
+            },
+            {
+              "parameterName": "Disk Format",
+              "parameterKey": "openstack_image_disk_format",
+              "parameterDescription": "(Optional) The format of the disk.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options":
+                [
+                  "ami",
+                  "ari",
+                  "aki",
+                  "vhd",
+                  "vhdx",
+                  "vmdk",
+                  "raw",
+                  "qcow2",
+                  "vdi",
+                  "ploop",
+                  "iso"
+                ]
+              }
+            },
+            {
+              "parameterName": "Minimum Disk",
+              "parameterKey": "openstack_image_min_disk",
+              "parameterDescription": "(Optional) Amount of disk space in GB that is required to boot the image.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "booleanValue": false,
+              "parameterName": "Minimum RAM",
+              "parameterKey": "openstack_image_min_ram",
+              "parameterDescription": "(Optional) Amount of RAM in MB that is required to boot the image.",
+              "parameterType": "number",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Protected",
+              "parameterKey": "openstack_image_protected",
+              "parameterDescription": "(Optional) Image protection for deletion.",
+              "parameterType": "boolean",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Tags",
+              "parameterKey": "openstack_image_tags",
+              "parameterDescription": "(Optional) List of tags for this image. Each tag is a string of at most 255 chars. The maximum number of tags allowed on an image is set by the operator.",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            },
+            {
+              "parameterName": "Visibility",
+              "parameterKey": "openstack_image_visibility",
+              "parameterDescription": "(Optional) The availability zone candidate for the network.",
+              "parameterType": "enumerated",
+              "inputDetails": {
+                "isOptional": true,
+                "options": [
+                  "public",
+                  "private",
+                  "shared",
+                  "community"
+                ]
+              }
+            },
+            {
+              "parameterName": "Additional Properties",
+              "parameterKey": "openstack_image_additional_properties",
+              "parameterDescription": "(Optional) A list of key value pairs to be added to the image specified as 'key:value'. Keys are limited to 255 chars in length. E.g. architecture:x86_64",
+              "parameterType": "stringList",
+              "inputDetails": {
+                "isOptional": true
+              }
+            }
+        ],
+        "outputParameters": [
+          {
+            "parameterName": "Raw Response",
+            "parameterKey": "rawResponse",
+            "parameterDescription": "The raw response from the Openstack API. JSON formatted String",
+            "parameterType": "string",
+            "outputDetails": {
+              "type": "CUSTOM",
+              "format": "unused"
+            }
+          },
+          {
+            "parameterName": "Image ID",
+            "parameterKey": "openstack_image_id",
+            "parameterDescription": "The ID of the created image",
             "parameterType": "string",
             "outputDetails": {
               "type": "CUSTOM",

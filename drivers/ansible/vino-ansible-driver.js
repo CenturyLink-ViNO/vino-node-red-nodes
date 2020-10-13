@@ -3,6 +3,8 @@ const VinoNodeUtility = NodeUtilities.VinoNodeUtility;
 const Parameter = require('../../lib/driver-utils/parameter');
 const Ansible = require('node-ansible');
 const filesystem = require('fs');
+const settingsObject = require('./config');
+const inspect = require('util').inspect;
 
 const inventoryTemplate = 'vino ansible_port={{#if targetPort}}{{targetPort}}{{else}}22{{/if}} ansible_ssh_host={{targetAddress}} ' +
     '{{#if ssh_username}}ansible_user={{ssh_username}}{{/if}} ' +
@@ -40,11 +42,13 @@ module.exports = function(RED)
 
    function AnsibleDriverNode(config)
    {
-      RED.nodes.createNode(this, config);
       this.NodeUtility = new VinoNodeUtility(
          config.name, config.description, config.baseTypes,
-         config.selectedBaseType, RED
+         config.selectedBaseType,
+         settingsObject.settings.vinoDriverAnsibleCommands.value,
+         settingsObject.settings.vinoDriverAnsibleCommonParameters.value, RED
       );
+      RED.nodes.createNode(this, config);
       this.description = config.description;
       this.statusConfiguration = config.statusConfiguration;
       this.outputProcessingType = config.outputProcessingType;
@@ -78,6 +82,7 @@ module.exports = function(RED)
          let tmpInventoryPath = '';
          try
          {
+            utils.debug(`message: ${inspect(msg)}`, outer, msg);
             const inputParameters = await outer.NodeUtility.processInputParameters(msg, outer);
             let outputParameters = null;
             const playbookTemplate = NodeUtilities.Utils.findParameter(inputParameters, 'playbook');
@@ -312,134 +317,5 @@ module.exports = function(RED)
       });
    }
 
-   const settingsObject = {
-      settings: {
-         vinoDriverAnsibleCommonParameters: {
-            value: [
-               {
-                  parameterName: 'Number of Retries',
-                  parameterKey: 'retries',
-                  parameterDescription: '(Optional) The number of times to retry asynchronous operations. Defaults to 5.',
-                  parameterType: 'number',
-                  inputDetails:
-                            { isOptional: true }
-               },
-               {
-                  parameterName: 'Retry Backoff Factor',
-                  parameterKey: 'retryBackoffFactor',
-                  parameterDescription: '(Optional) The factor to use when employing an exponential backoff strategy. Defaults to 3',
-                  parameterType: 'number',
-                  inputDetails:
-                            { isOptional: true }
-               },
-               {
-                  parameterName: 'Retry Timeout',
-                  parameterKey: 'retryTimeout',
-                  parameterDescription: '(Optional) The number of milliseconds to wait between retry attempts. Setting this value will' +
-                        ' disable the exponential backoff strategy.',
-                  parameterType: 'number',
-                  inputDetails:
-                            { isOptional: true }
-               },
-               {
-                  parameterName: 'Minimum Timeout',
-                  parameterKey: 'minTimeout',
-                  parameterDescription: '(Optional) The minimum number of milliseconds to wait between retry attempts. This value will be' +
-                        ' used when employing an exponential backoff strategy. Defaults to 10 seconds (10,000 milliseconds).',
-                  parameterType: 'number',
-                  inputDetails:
-                            { isOptional: true }
-               },
-               {
-                  parameterName: 'Maximum Timeout',
-                  parameterKey: 'maxTimeout',
-                  parameterDescription: '(Optional) The maximum number of milliseconds to wait between retry attempts. This value will be' +
-                        ' used when employing an exponential backoff strategy. Defaults to 60 seconds (60,000 milliseconds).',
-                  parameterType: 'number',
-                  inputDetails:
-                            { isOptional: true }
-               }
-            ],
-            exportable: true
-         },
-         vinoDriverAnsibleCommands: {
-            value: [
-               {
-                  name: 'Ansible',
-                  key: 'Ansible_Driver',
-                  description: 'Use to execute an Ansible playbook on a target machine',
-                  webservice: '/ansible/execute',
-                  allowedExtractionMethods: ['REGEX', 'CUSTOM'],
-                  inputParameters:
-                            [
-                               {
-                                  parameterName: 'SSH Private Key',
-                                  parameterKey: 'ssh_private_key',
-                                  parameterDescription: 'SSH Private Key for Ansible to use when logging in to Virtual Machines',
-                                  parameterType: 'string',
-                                  inputDetails:
-                                        {
-                                           isOptional: true,
-                                           fromConstants: true,
-                                           constantsPath: 'openstack/sshPrivateKey'
-                                        }
-                               },
-                               {
-                                  parameterName: 'SSH Username',
-                                  parameterKey: 'ssh_username',
-                                  parameterDescription: 'SSH username for Ansible to use when logging in to Virtual Machines',
-                                  parameterType: 'string',
-                                  inputDetails:
-                                        { isOptional: true }
-                               },
-                               {
-                                  parameterName: 'SSH Password',
-                                  parameterKey: 'ssh_password',
-                                  parameterDescription: 'SSH password for Ansible to use when logging in to Virtual Machines',
-                                  parameterType: 'string',
-                                  inputDetails:
-                                        { isOptional: true }
-                               },
-                               {
-                                  parameterName: 'Playbook',
-                                  parameterKey: 'playbook',
-                                  parameterDescription: 'The contents or a reference of the playbook. Uses Mustache templating',
-                                  parameterType: 'encodedString'
-                               },
-                               {
-                                  parameterName: 'Target IP Address',
-                                  parameterKey: 'targetAddress',
-                                  parameterDescription: 'IP Address of the target machine to run the playbook on',
-                                  parameterType: 'string'
-                               },
-                               {
-                                  parameterName: 'Target Port',
-                                  parameterKey: 'targetPort',
-                                  parameterDescription: 'The TCP port where Ansible will attempt an SSH connection.  Defaults to port 22',
-                                  parameterType: 'number',
-                                  inputDetails:
-                                        { isOptional: true }
-                               }
-                            ],
-                  outputParameters:
-                            [
-                               {
-                                  parameterName: 'Raw Response',
-                                  parameterKey: 'rawResponse',
-                                  parameterDescription: 'The raw response from the Ansible playbook execution.',
-                                  parameterType: 'string',
-                                  outputDetails:
-                                  {
-                                     type: 'CUSTOM',
-                                     format: 'unused'
-                                  }
-                               }
-                            ]
-               }
-            ],
-            exportable: true
-         }
-      }
-   };
    RED.nodes.registerType('vino-driver-ansible', AnsibleDriverNode, settingsObject);
 };
