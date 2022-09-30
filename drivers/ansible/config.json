@@ -80,6 +80,7 @@
               "parameterKey": "ssh_password",
               "parameterDescription": "SSH password for Ansible to use when logging in to Virtual Machines",
               "parameterType": "string",
+              "encrypt": true,
               "inputDetails":
               { "isOptional": true }
             },

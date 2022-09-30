@@ -483,14 +483,23 @@ module.exports = class OpenstackComputeClient
       server = await retryPromise;
       if (server && server.id)
       {
-         server = await this.waitForBoot(server.id);
-         if (networkObject.length > 0)
+         try
          {
-            for (const network of networkObject)
+            server = await this.waitForBoot(server.id);
+            if (networkObject.length > 0)
             {
-               await outer.attachInterface(server.id, network.port, network.uuid);
+               for (const network of networkObject)
+               {
+                  await outer.attachInterface(server.id, network.port, network.uuid);
+               }
+               await outer.rebootServer();
             }
-            await outer.rebootServer();
+         }
+         catch (err)
+         {
+            this.setParameterValue('openstack_vm_id', 'string', server.id);
+            await this.destroyServer();
+            throw err;
          }
       }
       return server;

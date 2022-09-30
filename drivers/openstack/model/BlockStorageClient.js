@@ -233,14 +233,23 @@ module.exports = class OpenstackBlockStorageClient
       volume = await retryPromise;
       if (volume && volume.id)
       {
-         const readyVolume = await this.waitForVolumeAvailable(volume.id);
-         if (typeof readyVolume === 'string')
+         try
          {
-            throw new Error(readyVolume);
+            const readyVolume = await this.waitForVolumeAvailable(volume.id);
+            if (typeof readyVolume === 'string')
+            {
+               throw new Error(readyVolume);
+            }
+            else
+            {
+               volume = readyVolume;
+            }
          }
-         else
+         catch (err)
          {
-            volume = readyVolume;
+            this.setParameterValue('openstack_volume_id', 'string', volume.id);
+            await this.destroyVolume();
+            throw err;
          }
       }
       return volume;
@@ -529,7 +538,16 @@ module.exports = class OpenstackBlockStorageClient
       snapshot = await retryPromise;
       if (snapshot && snapshot.id)
       {
-         outer.waitForSnapshotAvailable(snapshot.id);
+         try
+         {
+            outer.waitForSnapshotAvailable(snapshot.id);
+         }
+         catch (err)
+         {
+            this.setParameterValue('openstack_snapshot_id', 'string', snapshot.id);
+            outer.destroySnapshot();
+            throw err;
+         }
       }
       return snapshot;
    }
